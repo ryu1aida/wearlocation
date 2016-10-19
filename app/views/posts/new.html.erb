@@ -1,0 +1,21 @@
+<div class="contents row">
+  <%= form_tag('/posts', method: :post) do %>
+    <h3>
+      投稿する
+    </h3>
+
+    <input placeholder="title" type="text" name="name">
+
+    <%= form_for(@posts) do |f| %>    　
+    　　<%= f.file_field :name %>
+    　
+    <input type="submit" value="SENT">
+    <% end %>
+
+  <!-- こっからぶっこんだやつ -->
+
+  <% end %>
+
+
+
+</div>

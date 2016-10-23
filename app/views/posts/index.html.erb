@@ -1,6 +1,14 @@
-<% @posts %>
-ああ
-いい
-うう
-ええ
-おお
+
+<div>
+    <div  img class="imagezone" >
+      <% @posts.each do |post| %>
+      <%=   image_tag post.image %>
+      <% end %>
+      <%= paginate(@posts) %>
+    </div>
+    <div class="detailzone">
+      <% @posts.each do |detail| %>
+      <%= detail.title %>
+      <% end %>
+    </div>
+</div>

@@ -5,10 +5,58 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Unica+One::latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
 </head>
 <body>
 
-<%= yield %>
+  <header class="header">
+    <div class="header__bar row">
+      <h1 class="grid-6">WearLocation</h1>
+      <!-- <p class="heading-sentence">あなたの一枚を撮りに行こう。</p> -->
+        <% if user_signed_in? %>
+           <div class="user_nav grid-6">
+          <span><%= current_user.nickname %>
+            <ul class="user__info">
+              <li>
+                <a href="/users/<%= current_user.id %>">マイページ</a>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </span>
+             <a class="post" href="/posts/new">投稿する</a>
+           </div>
+           <% else %>
+             <div class="grid-6">
+               <%= link_to "ログイン", new_user_session_path, class: 'posts' %>
+               <%= link_to "新規登録", new_user_registration_path, class: 'posts' %>
+             </div>
+
+        <% end %>
+
+  </header>
+
+
+    <%= yield %>
+
+
+  <footer>
+aaaa
+  </footer>
 
 </body>
+
+
 </html>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :posts, only: :index
-  get   'posts'  =>  'posts#index'
+
+  devise_for :users
+    root 'posts#index'
+ resources  :posts
  get   'posts/new'  =>  'posts#new'
  post  'posts'      =>  'posts#create'
- get  'posts/show'   =>  'posts#show'
+ get "posts/:id" => "posts#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

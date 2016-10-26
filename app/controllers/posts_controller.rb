@@ -1,26 +1,25 @@
 class PostsController < ApplicationController
 
 def index
-  @posts = Post.all
+  @posts = Post.order("created_at DESC").page(params[:page]).per(5)
 end
 
 def new
- @posts = Post.new
+ @post = Post.new
 end
 
 
 def show
-   @posts = Post.all
+  @post = Post.find(params[:id])
 end
 
 def create
-  Post.create(title: params[:name], image: params[:image], content: params[:text])
+  Post.create(title: post_params[:title], image: tweet_params[:image], content: tweet_params[:content], user_id: current_user.id)
 end
 
 private
-  def posts_params
-    params.require(:posts).permit(:name, :image,:content)
+  def post_params
+    params.require(:post).permit(:title, :image, :content)
   end
-
 
 end

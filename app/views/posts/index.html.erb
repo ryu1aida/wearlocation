@@ -2,13 +2,24 @@
 <div>
     <div  img class="imagezone" >
       <% @posts.each do |post| %>
-      <%=   image_tag post.image %>
+      <div class="username">
+        <span></span>
+      <div>
+      <div class="image">
+        <img><%=   image_tag post.image %><br>
+      </div>
+      <div class="description">
+        <p><%= post.title %></p>
+      </div>
+    </div>
       <% end %>
       <%= paginate(@posts) %>
     </div>
-    <div class="detailzone">
+
+
+    <!-- <div class="detailzone">
       <% @posts.each do |detail| %>
       <%= detail.title %>
       <% end %>
-    </div>
+    </div> -->
 </div>

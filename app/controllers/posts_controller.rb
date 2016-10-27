@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
 def index
-  @posts = Post.order("created_at DESC").page(params[:page]).per(5)
+  @posts = Post.includes(:user).page(params[:page]).per(5).order("created_at DESC")
 end
 
 def new
@@ -17,9 +17,28 @@ def create
   Post.create(title: post_params[:title], image: tweet_params[:image], content: tweet_params[:content], user_id: current_user.id)
 end
 
+def destroy
+      post = Post.find(params[:id])
+      if post.user_id == current_user.id
+        post.destroy
+      end
+end
+
+def edit
+     @post = Post.find(params[:id])
+end
+
+def update
+      post = Post.find(params[:id])
+      if post.user_id == current_user.id
+        post.update(post_params)
+      end
+    end
+
+
 private
   def post_params
-    params.require(:post).permit(:title, :image, :content)
+    params.require(:post).permit(:title, :image)
   end
 
 end

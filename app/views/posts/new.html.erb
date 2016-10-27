@@ -1,17 +1,18 @@
 <div class="contents row">
+  <%= form_tag('/posts', method: :post) do %>
     <h1>
       投稿する
     </h1>
 
     <%= form_for(@post) do |f| %>
       <div>
+        タイトルを入力<br>
         <%= f.text_field :title %><br>
         <%= f.file_field :image %><br>
-        <%= f.text_area :content %>
+        <!-- <%= f.text_area :content %> -->
       </div>
     　
       <input type="submit" value="SEND">
     <% end %>
-
-  <!-- こっからぶっこんだやつ -->
+  <% end %>
 </div>

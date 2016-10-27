@@ -1,25 +1,31 @@
 
 <div>
-    <div  img class="imagezone" >
-      <% @posts.each do |post| %>
-      <div class="username">
-        <span></span>
-      <div>
-      <div class="image">
+  <div  img class="imagezone" >
+    <% @posts.each do |post| %>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+
+        <div class="image">
         <img><%=   image_tag post.image %><br>
+        </div>
+                <ul class="more_list">
+                  <li>
+                   <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+                  </li>
+                  <li>
+                    <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+                  </li>
+                </ul>
+            <div class="description">
+              <p><%= post.title %></p>
+                <span class="name">
+                  <a href="">
+                    <%= post.user.nickname %>
+                  </a>
+              </span>
+            </div>
       </div>
-      <div class="description">
-        <p><%= post.title %></p>
-      </div>
-    </div>
+      <% end %>
       <% end %>
       <%= paginate(@posts) %>
-    </div>
-
-
-    <!-- <div class="detailzone">
-      <% @posts.each do |detail| %>
-      <%= detail.title %>
-      <% end %>
-    </div> -->
+  </div>
 </div>

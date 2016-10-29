@@ -11,8 +11,16 @@
         <%= f.file_field :image %><br>
         <!-- <%= f.text_area :content %> -->
       </div>
-    　
+      <div>
+      <%= form_for(@place) do |ff| %>
+      <%= ff.text_field :name %><br>
+      <%= ff.text_field :description %><br>
+      <%= ff.text_field :latitude %><br>
+      <%= ff.text_field :longitude %><br>
+      </div>
+
       <input type="submit" value="SEND">
     <% end %>
+  <% end %>
   <% end %>
 </div>

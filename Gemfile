@@ -55,4 +55,6 @@ group :development do
   gem 'kaminari'
   gem 'devise'
   gem 'pry-rails'
+  source 'https://rubygems.org'
+  gem 'gmaps4rails'
 end

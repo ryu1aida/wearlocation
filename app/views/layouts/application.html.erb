@@ -19,29 +19,43 @@
       s.parentNode.insertBefore(wf, s);
     })();
   </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfHnxqDOqjHXi4Dzj8k1vif9490Q2j5tQ"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
+
+
 </head>
 <body>
 
   <header class="header">
     <div class="header__bar row">
-      <h1 class="grid-6">WearLocation</h1>
+      <h1 class="grid-6" >WearLocation</h1>
+      <!-- <%= image_tag 'locaion-icon.png', :size => '20x20' %> -->
       <!-- <p class="heading-sentence">あなたの一枚を撮りに行こう。</p> -->
         <% if user_signed_in? %>
-           <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
+         <div class="user_nav grid-6">
             <ul class="user__info">
-              <li>
-                <a href="/users/<%= current_user.id %>">マイページ</a>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              </li>
+                <li>
+                  <a class="logout" href="destroy_user_session_path"><%= image_tag 'logout-icon.png',:size => '40x40' %></a>
+                  <!-- <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> -->
+                </li>
+                <li>
+                  <a class="login" href="/users/<%= current_user.id %>"><%= image_tag 'login-icon.png',:size => '40x40' %></a>
+                </li>
+                <li>
+                  <a class="post" href="/posts/new"><%= image_tag 'post-icon.png',:size => '40x40' %></a>
+                </li>
             </ul>
-          </span>
-             <a class="post" href="/posts/new">投稿する</a>
+
+
            </div>
            <% else %>
              <div class="grid-6">
-               <%= link_to "ログイン", new_user_session_path, class: 'posts' %>
-               <%= link_to "新規登録", new_user_registration_path, class: 'posts' %>
+                <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '50x50' %></a>
+
+               <!-- <%= link_to "ログイン", new_user_session_path, class: 'posts' %> -->
+<a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '50x50' %></a>
+
              </div>
 
         <% end %>
@@ -55,6 +69,7 @@
   <footer>
 aaaa
   </footer>
+
 
 </body>
 

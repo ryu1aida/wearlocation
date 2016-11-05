@@ -1,6 +1,38 @@
-<% @posts %>
-ああ
-いい
-うう
-ええ
-おお
+
+<!-- <div class="timeline">timeline</div> -->
+
+<div>
+  <div  img class="imagezone" >
+    <% @posts.each do |post| %>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+
+        <div class="image">
+        <img><%=   image_tag post.image %><br>
+        </div>
+                <ul class="more_list">
+                  <li>
+                     <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+                  </li>
+                  <li>
+                  <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+                  </li>
+                </ul>
+            <div class="description">
+              <p><%= post.title %></p>
+              <!-- <div class="map-embed">
+                <div id="map-canvas">ここに地図が表示されます</div> -->
+              </div>
+
+
+                <span class="name">
+                  <a href="">
+                    <%= post.user.nickname %>
+                  </a>
+              </span>
+            </div>
+      </div>
+      <% end %>
+      <% end %>
+      <%= paginate(@posts) %>
+  </div>
+</div>

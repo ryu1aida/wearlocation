@@ -1,3 +1,31 @@
+@media only screen and (max-width: 979px) {
+
+    Html{
+        Width:100%;
+    }
+
+} /*デバイスの横幅が979px以下の場合*/
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+
+    Html{
+        Width:100%;
+    }
+
+} /*デバイスの横幅が321以上768以下の場合*/
+
+@media only screen and (max-width: 320px) {
+
+    header{
+        Width:90%;
+    }
+
+} /* デバイスの横幅が320px以下の場合 */
+
+
+
+
+
 
 //アプリケーション部分に関する記載
 header.header{
@@ -17,6 +45,7 @@ margin-top: 0;
                     margin-left: 300px;
                     float: left;
                   }
+
     div.grid-6 {
 
       ul{
@@ -55,11 +84,12 @@ body {
               margin:0px;padding:0px;
   .imagezone {
               font-weight: normal;
-              background-color: rgb(255, 255, 255);
+               background-color: rgb(255, 255, 255);
+               border:solid thin rgb(237, 238, 238);
               max-height: 400px;
               max-width: 400px;
-              margin: 0 auto;
-              padding: 135px 0 0 0;
+              margin: 40px auto;
+              padding: 0 0 0 0;
         strong {
                 font-weight: bold;
                 padding-right: 5px;
@@ -70,11 +100,16 @@ body {
               float:right;
                 list-style: none;
             }
+nav.pagination{
+  font-size: 20px;
+}
+
 .name{
 text-align: left;
 }
 
 }
+
 
 
 .sign_in {
@@ -110,11 +145,19 @@ padding: 135px 0 0 0;
 text-align: center;
 }
 
-
+footer {
+    position:　absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  footer.p{
+   text-align: center;
+          }
+}
 
 
 // #投稿画面━━━━━━━━━━━━━━━━━━━━━━━━━
-h3 {
+div.h3 {
 background: #ffffff;
 width: 500px;
 padding: 10px;

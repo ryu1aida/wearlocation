@@ -36,7 +36,7 @@ group :development, :test do
   gem 'byebug'
 end
 
-gem 'mysql2', '0.3.18'
+gem 'mysql2', '0.3.18', group: [:development, :test]
 
 group :production, :staging do
   gem 'rails_12factor'
@@ -50,11 +50,10 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
 # 自分で入れたやつ
-  gem 'carrierwave'
-  gem 'rmagick'
-  gem 'kaminari'
-  gem 'devise'
-  gem 'pry-rails'
-  source 'https://rubygems.org'
-  gem 'gmaps4rails'
 end
+
+gem 'carrierwave'
+gem 'rmagick'
+gem 'kaminari'
+gem 'devise'
+gem 'gmaps4rails'

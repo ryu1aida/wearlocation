@@ -50,9 +50,10 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
 # 自分で入れたやつ
-  gem 'carrierwave'
-  gem 'rmagick'
-  gem 'kaminari'
-  gem 'devise'
-  gem 'gmaps4rails'
 end
+
+gem 'carrierwave'
+gem 'rmagick'
+gem 'kaminari'
+gem 'devise'
+gem 'gmaps4rails'

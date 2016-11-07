@@ -52,7 +52,6 @@ group :development do
 # 自分で入れたやつ
 
 end
-gem ruby '2.2.4'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'

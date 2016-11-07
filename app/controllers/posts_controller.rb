@@ -22,7 +22,17 @@ def show
 end
 
 def create
-  Post.create(title: post_params[:title], image: post_params[:image], content: post_params[:content], name: post_params[:name], description: post_params[:description], latitude: post_params[:latitude], longitude: post_params[:longitude], user_id: current_user.id)
+  current_user.posts.create(post_params)
+  # Post.create(
+  #   title: post_params[:title],
+  #   image: post_params[:image],
+  #   content: post_params[:content],
+  #   name: post_params[:name],
+  #   description: post_params[:description],
+  #   latitude: post_params[:latitude],
+  #   longitude: post_params[:longitude],
+  #   user_id: current_user.id
+  # )
 end
 # def create
 # Place.create(current_user.id )
@@ -49,7 +59,8 @@ end
 
 private
 def post_params
-  params.require(:post).permit(:title,:image,:name, :description, :latitude, :longitude)
+  params.require(:post)
+        .permit(:title, :image, :content, :name, :description, :latitude, :longitude)
 end
   # def place_params
   #   params.require(:place).permit()

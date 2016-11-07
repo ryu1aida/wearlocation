@@ -1,8 +1,36 @@
+@media only screen and (max-width: 979px) {
+
+    Html{
+        Width:100%;
+    }
+
+} /*デバイスの横幅が979px以下の場合*/
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+
+    Html{
+        Width:100%;
+    }
+
+} /*デバイスの横幅が321以上768以下の場合*/
+
+@media only screen and (max-width: 320px) {
+
+    header{
+        Width:90%;
+    }
+
+} /* デバイスの横幅が320px以下の場合 */
+
+
+
+
+
 
 //アプリケーション部分に関する記載
 header.header{
               position: fixed;
-margin-top: 0;
+              margin-top: 0;
               margin-bottom: 130px;
               height: 75px;
               width: 100%;
@@ -11,16 +39,17 @@ margin-top: 0;
               text-align: center;
               font-family: inherit;
         h1.grid-6 {
+          line-height: 40px;
+          margin-top: 15px;
                     color: black;
-                    line-height: 41px;
-                    margin-top: 20px;
                     margin-left: 300px;
                     float: left;
                   }
+
     div.grid-6 {
 
-      ul{
-        margin-top:20px;
+      ul.user__info{
+        margin-top: 20px;
         margin-right: 300px;
         list-style: none;
         }
@@ -28,6 +57,9 @@ margin-top: 0;
         float: right;
 
         }
+
+
+
     }
     .loacation-icon.png {
       height: 30px;
@@ -48,18 +80,18 @@ header.heading-sentence{
                         }
 }
 
-
 body {
               background: rgb(250, 250, 250);
               text-align: center;
               margin:0px;padding:0px;
   .imagezone {
               font-weight: normal;
-              background-color: rgb(255, 255, 255);
+               background-color: rgb(255, 255, 255);
+               border:solid thin rgb(237, 238, 238);
               max-height: 400px;
               max-width: 400px;
-              margin: 0 auto;
-              padding: 135px 0 0 0;
+              margin: 40px auto;
+              padding: 0 0 0 0;
         strong {
                 font-weight: bold;
                 padding-right: 5px;
@@ -70,11 +102,16 @@ body {
               float:right;
                 list-style: none;
             }
+nav.pagination{
+  font-size: 20px;
+}
+
 .name{
 text-align: left;
 }
 
 }
+
 
 
 .sign_in {
@@ -110,11 +147,19 @@ padding: 135px 0 0 0;
 text-align: center;
 }
 
-
+footer {
+    position:　absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  footer.p{
+   text-align: center;
+          }
+}
 
 
 // #投稿画面━━━━━━━━━━━━━━━━━━━━━━━━━
-h3 {
+div.h3 {
 background: #ffffff;
 width: 500px;
 padding: 10px;
@@ -175,6 +220,7 @@ text-align: center;
 .map-embed img
 {
 	max-width: none ;
+
 }
 
 .map-canvas{
@@ -182,6 +228,7 @@ text-align: center;
 	height: 100px ;
 	margin: 100px ;
 	padding: 0 0 56.25% ;
+
 }
 
 

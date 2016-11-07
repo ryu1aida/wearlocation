@@ -4,7 +4,7 @@
       <% if user_signed_in? && current_user.id == post.user_id %>
             <%= post.user.nickname %>
           <div class="image">
-          <img><%=   image_tag post.image %><br>
+          <img><%=   image_tag post.image.url %><br>
           </div>
 
           <div class="detailzone">

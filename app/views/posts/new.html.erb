@@ -1,23 +1,37 @@
-<div class="contents row">
-  <%= form_tag('/posts', method: :post) do %>
-    <h1>
-      投稿する
-    </h1>
+<!-- 以下擬似コメントアウト -->
 
-    <%= form_for(@post) do |f| %>
-      <div>
-        タイトルを入力<br>
-        <%= f.text_field :title %><br>
-        <%= f.file_field :image %><br>
-        <%= f.text_field :name %><br>
-        <%= f.text_field :description %><br>
-        <%= f.text_field :latitude %><br>
-        <%= f.text_field :longitude %><br>
-        <!-- <%= f.text_area :content %> -->
-      </div>
+<% if false %>
+  <div class="contents row">
+    <%= form_tag('/posts', method: :post) do %>
+      <h1>
+        投稿する
+      </h1>
 
-        <%= f.submit '投稿する' %>
-      <!-- <input type="submit" value="SEND"> -->
+      <%= form_for(@post) do |f| %>
+        <div>
+          タイトルを入力<br>
+          <%= f.text_field :title %><br>
+          <%= f.file_field :image %><br>
+          <%= f.text_field :name %><br>
+          <%= f.text_field :description %><br>
+          <%= f.text_field :latitude %><br>
+          <%= f.text_field :longitude %><br>
+          <!-- <%= f.text_area :content %> -->
+        </div>
+
+          <%= f.submit '投稿する' %>
+        <!-- <input type="submit" value="SEND"> -->
+      <% end %>
     <% end %>
+  </div>
+<% end %>
+
+<!-- 擬似コメントアウトここまで -->
+
+<div>
+  <%= form_for @post do |f| %>
+    <%= f.text_field :title, placeholder: 'title' %>
+    <%= f.file_field :image %>
+    <%= f.submit %>
   <% end %>
 </div>

@@ -18,7 +18,7 @@ end
 
 def show
   @post = Post.find(params[:id])
-  @places = current_user.posts.page(params[:page]).per(5).order("created_at DESC")
+
 end
 
 def create

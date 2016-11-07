@@ -43,16 +43,23 @@
           </div>
         <% else %>
             <div class="grid-6">
-              <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '50x50' %></a>
+              <ul class="user__info">
+                <li>
+              <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '45x45' %></a>
+            </li>
+            <li>
                <!-- <%= link_to "ログイン", new_user_session_path, class: 'posts' %> -->
-              <a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '50x50' %></a>
+              <a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '45x45' %></a>
+            </li>
+          </ul>
             </div>
         <% end %>
   </header>
 
-   <div class="contents clearfix">
-    <%= yield %>
-    </div>
+
+<div class="contents clearfix">
+ <%= yield %>
+ </div>
 
 
   <footer>

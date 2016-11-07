@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <div  img class="imagezone" >
       <% if user_signed_in? && current_user.id == post.user_id %>
-
+            <%= post.user.nickname %>
           <div class="image">
           <img><%=   image_tag post.image %><br>
           </div>
@@ -15,10 +15,19 @@
               <li>
                 <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
               </li>
+              <li>
+                <%= link_to '詳細', "/posts/#{post.id}", method: :get %>
+              </li>
             </ul>
               <div class="description">
                 <p><%= post.title %></p>
-                  <%= post.user.nickname %>
+
+
+
+
+
+
+
               </div>
           </div>
     </div>

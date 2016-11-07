@@ -32,11 +32,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
 
-gem 'mysql2', '0.3.18'
+gem 'mysql2', '0.3.18', group: [:development, :test]
 
 group :production, :staging do
   gem 'rails_12factor'
@@ -50,11 +50,12 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
 # 自分で入れたやつ
-  gem 'carrierwave'
-  gem 'rmagick'
-  gem 'kaminari'
-  gem 'devise'
-  gem 'pry-rails'
-  source 'https://rubygems.org'
-  gem 'gmaps4rails'
+
 end
+gem ruby '2.2.4'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'kaminari'
+gem 'devise'
+gem 'pry-rails'
+source 'https://rubygems.org'

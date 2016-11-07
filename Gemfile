@@ -52,9 +52,11 @@ group :development do
 # 自分で入れたやつ
 
 end
+
+
 gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
 gem 'devise'
 gem 'pry-rails'
-source 'https://rubygems.org'
+gem 'gmaps4rails'

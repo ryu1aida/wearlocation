@@ -2,27 +2,27 @@
   <% @posts.each do |post| %>
     <div  img class="imagezone" >
       <% if user_signed_in? && current_user.id == post.user_id %>
-        <%= post.user.nickname %>
+
         <div class="image">
           <%= image_tag post.image.url %><br>
-        </div>
-        <div class="detailzone">
-          <ul class="more_list">
-            <li>
-              <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
-            </li>
-            <li>
-              <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
-            </li>
-            <li>
-              <%= link_to '詳細', "/posts/#{post.id}", method: :get %>
-            </li>
-          </ul>
+          <%= post.user.nickname %><br>
+          <!-- like機能 -->
+
+
+          <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
+
           <div class="description">
             <p><%= post.title %></p>
           </div>
         </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ranking">
+
       </div>
+    </div>
+
       <% end %>
     <% end %>
     <div class="paginate">

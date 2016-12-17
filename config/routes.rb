@@ -2,14 +2,20 @@ Rails.application.routes.draw do
 
   resources :places
   devise_for :users
-    root 'posts#index'
- resources  :posts
+  root 'posts#index'
+  resources  :posts do
+   resources :likes, only: [:create, :destroy]
+  end
  get   'posts/new'  =>  'posts#new'
  post  'posts'      =>  'posts#create'
  get   "posts/:id" => "posts#show"
  delete  'posts/:id'  => 'posts#destroy'
  patch   'posts/:id'  => 'posts#update'
  get   'posts/:id/edit'  => 'posts#update'
+ # いいね機能をつくっていく
+ # post 'like/:tweet_id' => 'likes#like', as: 'like'
+ # delete 'unlike/:tweet_id' => 'likes#unlike', as: 'unlike'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   #

@@ -3,11 +3,9 @@
     Html{
         Width:100%;
     }
-
 } /*デバイスの横幅が979px以下の場合*/
 
 @media only screen and (min-width: 321px) and (max-width: 768px) {
-
     Html{
         Width:100%;
     }
@@ -15,7 +13,6 @@
 } /*デバイスの横幅が321以上768以下の場合*/
 
 @media only screen and (max-width: 320px) {
-
     header{
         Width:90%;
     }
@@ -27,108 +24,130 @@
 
 
 
-//アプリケーション部分に関する記載
+//ヘッダー部分に関して
 header.header{
-              position: fixed;
-              margin-top: 0;
-              margin-bottom: 130px;
-              height: 75px;
-              width: 100%;
-              background-color: rgb(255, 255, 255);
-              border-bottom:solid thin rgb(219, 219, 219);
-              text-align: center;
-              font-family: inherit;
-        h1.grid-6 {
-          line-height: 40px;
-          margin-top: 15px;
-                    color: black;
-                    margin-left: 300px;
-                    float: left;
-                  }
+  position: fixed;
+  margin-top: 0;
+  margin-bottom: 130px;
+  height: 75px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-bottom:solid thin rgb(219, 219, 219);
+  text-align: center;
+  font-family: inherit;
+    h1.grid-6 {
+      line-height: 40px;
+      margin-top: 15px;
+      color: black;
+      margin-left: 300px;
+      float: left;
+    }
 
     div.grid-6 {
-
       ul.user__info{
         margin-top: 20px;
         margin-right: 300px;
         list-style: none;
-        }
-        ul li {
+      }
+      ul li {
         float: right;
-
-        }
-
-
-
+      }
     }
-    .loacation-icon.png {
-      height: 30px;
-      width: 30px;
-    }
-    .user_nav {
-      position: relative;
-      height: 100px;
-      position: absolute;
-      right: 0;
-    }
-header.title{
-            font-size: 100px;
-            }
+  .loacation-icon.png {
+    height: 30px;
+    width: 30px;
+  }
+  .user_nav {
+    position: relative;
+    height: 100px;
+    position: absolute;
+    right: 0;
+  }
+  header.title{
+    font-size: 100px;
+  }
 
-header.heading-sentence{
-                        font-size: 30px;
-                        }
+  header.heading-sentence{
+    font-size: 30px;
+  }
 }
+
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+// ボディに関して
 
 body {
-              background: rgb(250, 250, 250);
-              text-align: center;
-              margin:0px;padding:0px;
-  .imagezone {
-              font-weight: normal;
-               background-color: rgb(255, 255, 255);
-               border:solid thin rgb(237, 238, 238);
-              max-height: 400px;
-              max-width: 400px;
-              margin: 40px auto;
-              padding: 0 0 0 0;
+  background: rgb(250, 250, 250);
+  margin:0px;padding:0px;
+    .imagezone {
+      font-weight: normal;
+      background-color: rgb(255, 255, 255);
+      border:solid thin rgb(237, 238, 238);
+      max-height: 800px;
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 0 0 0 0;
+
+
         strong {
-                font-weight: bold;
-                padding-right: 5px;
-                font-size: 1.2em;
-                }
-              }
-            ul li {
-              float:right;
-                list-style: none;
-            }
-nav.pagination{
-  font-size: 20px;
+          font-weight: bold;
+          padding-right: 5px;
+          font-size: 1.2em;
+        }
+    }
+  nav.pagination{
+    font-size: 20px;
+  }
+
+  .name{
+    text-align: left;
+  }
 }
 
-.name{
-text-align: left;
-}
 
+.btn {
+  display: inline-block;
+  width: 200px;
+  margin:10px;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color:#fff;
+  border:2px solid rgb(219, 219, 219);
+  background-color:rgb(237, 238, 238);
+  text-decoration: none;
+  &:hover {
+    background-color: #fff;
+	  border-color: rgb(56, 151, 240);
+	  color: rgb(56, 151, 240);
+    transition: .3s;
+    }
 }
 
 
 
 .sign_in {
-      margin-top:20px;
-        }
+  margin-top:20px;
+}
 
 
-  footer{
-    margin-top: 20px;
-    height: 50px;
-    background-color: gray;
-  }
+footer{
+  margin-top: 20px;
+  height: 50px;
+  background-color: gray;
+}
 
 // #インデックス画面
 
 title {
-color: 111111;
+  color: 111111;
   background: #ffffff;
   width: 500px;
   padding: 10px;
@@ -139,66 +158,77 @@ color: 111111;
   background-color: #ffffff;
   width:400px;
   font-size: 34px;
-text-align: center;
+  text-align: center;
 }
 
 .contents{
-padding: 135px 0 0 0;
-text-align: center;
+  padding: 135px 0 0 0;
+  text-align: center;
 }
 
 footer {
-    position:　absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-  footer.p{
-   text-align: center;
-          }
+  position:　absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+    footer.p{
+      text-align: center;
+    }
 }
 
 
 // #投稿画面━━━━━━━━━━━━━━━━━━━━━━━━━
 div.h3 {
-background: #ffffff;
-width: 500px;
-padding: 10px;
-text-align: center;
+  background: #ffffff;
+  width: 500px;
+  padding: 10px;
+  text-align: center;
 }
 
 input{
-background: #ffffff;
-width: 500px;
-padding: 10px;
-text-align: center;
+  background: #ffffff;
+  width: 500px;
+  padding: 10px;
+  text-align: center;
 }
 
 input[type="submit"] {
-    border-radius: 20px;
-    color: #1114444;
-    border:solid 1 rgb(219, 219, 219);
-    font-size: 18px;
-    }
-
-
+  border-radius: 20px;
+  color: #1114444;
+  border:solid 1 rgb(219, 219, 219);
+  font-size: 18px;
+}
 
 textarea{
-background: #ffffff;
-width: 500px;
-padding: 0px;
-text-align: center;
+  background: #ffffff;
+  width: 500px;
+  padding: 0px;
+  text-align: center;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//マップに関するCSS━━━━━━━━━━━━━━━━━━━━━━━━━
 .map-embed
 {
 	max-width: 100% ;
 	height: 100px ;
 	margin: 100px ;
 	padding: 0 0 56.25% ;
-
 	overflow: hidden ;
-
 	position: relative ;
 	top: 0 ;
 	left: 0 ;
@@ -209,10 +239,8 @@ text-align: center;
 	position: absolute ;
 	top: 100px ;
 	left: 100px ;
-
 	width: 100% ;
 	height: 100% ;
-
 	margin: 0 ;
 	padding: 0 ;
 }
@@ -228,379 +256,4 @@ text-align: center;
 	height: 100px ;
 	margin: 100px ;
 	padding: 0 0 56.25% ;
-
 }
-
-
-
-// // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//
-//
-// /*
-//  * "ほのか明朝" licensed under the IPA Font License Agreement v1.0
-//  * http://fontfree.me/966（配布元のURL）
-//  * http://ipafont.ipa.go.jp/（IPAフォントのURL）
-//  * http://ipafont.ipa.go.jp/ipa_font_license_v1.html（IPAフォントライセンスv1.0のURL）
-//  */
-// @font-face {
-//     font-family: 'ほのか明朝';
-//     src: url('font_1_honokamin.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-//
-// @import url(http://fonts.googleapis.com/css?family=Unica+One);
-//
-// $accent: #57C3E9;
-// $black: #292929;
-// $dark: #666;
-// $darkGray: #999999;
-// $gray: #D8D8D8;
-// $lightGray: #f5f5f3;
-// $white: white;
-//
-//
-// //mixin
-//
-// @mixin boxBase($margin: 30px auto, $padding: 10px) {
-//   margin: $margin;
-//   padding: $padding;
-// }
-// @mixin basePadding($padding: 10px) {
-//   padding: $padding;
-// }
-// @mixin baseMargin($margin: 10px auto) {
-//   margin: $margin;
-// }
-//
-// body,html {
-//   height: 100%;
-//   background-color: $lightGray;
-// }
-//
-// body {
-//   padding-top: 60px;
-// }
-//
-// h1,h2,h3,h4,h5,h6,body {
-// line-height: 1.57;
-//   letter-spacing: 0.15em;
-//   font-size: 16px;
-//   color: $dark;
-//   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
-//   margin: 0;
-// }
-//
-// a {
-//   text-decoration: none;
-//   color: $dark;
-//   @extend .transition;
-//   &:hover {
-//     color: $accent;
-//   }
-// }
-//
-// .bold {
-//   font-weight: bold;
-// }
-//
-// .serif {
-//   font-family: 'ほのか明朝',serif;
-// }
-//
-// .ultra {
-//   font-size: 2em !important;
-// }
-//
-// ::selection {
-//   background: $gray;
-// }
-//
-// .transition {
-//   @include transition-property(all);
-//   @include transition-duration(0.2s);
-//   @include transition-timing-function(linear);
-// }
-//
-// .btn {
-//     @include basePadding(8px 20px);
-//     font-size: 14px;
-//     border: 2px solid $accent;
-//     color: $accent;
-//     font-weight: bold;
-//     text-align: center;
-//     border-radius: 3px;
-//     display: inline-block;
-//   &:hover {
-//     border-color: lighten($accent, 15%);
-//     color: lighten($accent, 15%);
-//   }
-// }
-//
-// h1,h2,h3,h4,h5,h6 {
-// }
-//
-// .title {
-//   font-weight: bold;
-// }
-//
-// .title--big {
-//   font-size: 1.5em;
-//   font-weight: bold;
-//   i {
-//     font-style: italic;
-//     font-size: 1.8em;
-//   }
-// }
-//
-//
-// header.header {
-//   @include basePadding;
-//   border-bottom: 1px solid $gray;
-//   background-color: #fff;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   z-index: 5;
-//   div.header__bar.row {
-//     position: relative;
-//     h1.grid-6 {
-//       font-size: 20px;
-//       line-height: 41px;
-//       float: left;
-//       a {
-//         display: block;
-//       }
-//     }
-//     div.grid-6 {
-//       float: right;
-//       text-align: right;
-//       a.post {
-//         @extend .btn;
-//         width: 120px;
-//         display: inline-left;
-//         margin-left: 10px;
-//       }
-//     }
-//   }
-//   .user_nav {
-//     position: relative;
-//     height: 100px;
-//     position: absolute;
-//     right: 0;
-//     span {
-//       top: 5px;
-//       display: block;
-//       float: left;
-//       margin-left: 30px;
-//       width: 150px;
-//       height: 50px;
-//       font-size: 1em;
-//       cursor: pointer;
-//       position: relative;
-//       &:after {
-//         content: '▼';
-//         font-size: .7em;
-//         margin-left: -4px;
-//       }
-//       &:hover ul {
-//         color: $accent;
-//         display: block;
-//       }
-//     }
-//     ul {
-//       display: none;
-//       position: absolute;
-//       top: 46px;
-//       right: 0;
-//       border-left: 1px solid #d8d8d8;
-//       border-right: 1px solid #d8d8d8;
-//       box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
-//       li {
-//         background-color: #f0f0f0;
-//         a {
-//           display: block;
-//           padding: 10px 20px;
-//           text-align: left;
-//           border-bottom: 1px solid #d8d8d8;
-//         }
-//       }
-//      }
-//   }
-// }
-// .form {
-//   background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
-//   background-size: cover;
-//   .contents {
-//     position: absolute;
-//     left: 0;
-//     top: 30%;
-//     bottom: 0;
-//     right: 0;
-//   }
-//   footer {
-//     position: absolute;
-//     bottom: 10px;
-//     left: 0;
-//     right: 0;
-//   }
-// }
-
-//   .new_user{
-//   font-family: "游ゴシック", "YuGothic";
-//   }
-//   div.content_post {
-//     @include boxBase(20px 0 ,30px);
-//     position: relative;
-//     height: 400px;
-//     color: #fff;
-//     background-size: cover;
-//     background-position: center center;
-//     border-radius: 3px;
-//     box-shadow: 0 0 10px rgba($black,0.2);
-//     &:after {
-//       content: '';
-//       position: absolute;
-//       top: 0;
-//       bottom: 0;
-//       left: 0;
-//       right: 0;
-//       @include filter-gradient(#000000, #a60000, vertical);
-//       @include background-image(linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 62%,rgba(0,0,0,0.85) 100%));
-//       z-index: 1;
-//       border-radius: 3px;
-//     }
-//     .more {
-//       position: absolute;
-//       cursor: pointer;
-//       top: 20px;
-//       right: 30px;
-//       z-index: 2;
-//       height: 100px;
-//       width: 80px;
-//       text-align: right;
-//       &:hover ul.more_list {
-//         display: block;
-//       }
-//       ul.more_list {
-//         position: absolute;
-//         text-align: left;
-//         width: 80px;
-//         right: 0;
-//         font-size: 12px;
-//         background-color: #fff;
-//         border: 1px solid #ddd;
-//         display: none;
-//         box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-//         border-radius: 3px;
-//         li {
-//           border-bottom: 1px solid #ddd;
-//           &:last-child {
-//             border-bottom: 0;
-//           }
-//           a {
-//             display: block;
-//             padding: 5px;
-//             &:hover {
-//               background-color: $accent;
-//               color: #fff;
-//             }
-//           }
-//         }
-//       }
-//     }
-//     p {
-//       @extend .serif;
-//       position: absolute;
-//       left: 30px;
-//       right: 100px;
-//       bottom: 30px;
-//       margin: 0;
-//       font-size: 20px;
-//       z-index: 2;
-//       font-weight: bold;
-//       text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
-//     }
-//     span.name {
-//       position: absolute;
-//       right: 30px;
-//       bottom: 30px;
-//       z-index: 2;
-//       font-size: 13px;
-//       a {
-//         display: block;
-//         color: #aaa;
-//         &:hover {
-//           text-decoration: underline;
-//           color: #aaa;
-//         }
-//       }
-//       span {
-//         font-size: 9px;
-//         display: block;
-//       }
-//     }
-//   }
-//  .success {
-//     @include boxBase(20px 0 ,30px);
-//     box-shadow: 0 0 10px rgba($black,0.2);
-//     background-color: $white;
-//     box-sizing: border-box;
-//     text-align: center;
-//     h3 {
-//       @include baseMargin;
-//     }
-//   }
-// }
-// form {
-//   h3 {
-//     @include baseMargin(0 0 20px);
-//     text-align: center;
-//     font-weight: normal;
-//     font-size: 20px;
-//     color: $dark;
-//   }
-//   input,textarea {
-//     width: 100%;
-//     @include boxBase(5px 0 15px,10px);
-//     border: 1px solid $gray;
-//     border-radius: 5px;
-//     font-family: "游ゴシック", "YuGothic";
-//   }
-//   input[type="submit"] {
-//     @extend .transition;
-//     background-color: $accent;
-//     border-radius: 20px;
-//     color: #fff;
-//     border: 0;
-//     font-size: 18px;
-//     &:hover {
-//       background-color: lighten($accent, 10%);
-//     }
-//   }
-// }
-// .container {
-//   @include boxBase(20px 0 ,30px);
-//   box-shadow: 0 0 10px rgba($black,0.2);
-//   background-color: $white;
-//   box-sizing: border-box;
-// }
-// .comments {
-//   padding: 5px;
-//   margin-top: 15px;
-//   a {
-//     color: $accent;
-//     &:hover {
-//       text-decoration: underline;
-//     }
-//   }
-// }
-//
-// footer {
-//   @include boxBase;
-//   color: $gray;
-//   p {
-//     text-align: center;
-//   }
-// }

@@ -1,4 +1,4 @@
-  <%= image_tag @post.image %>
+  <%= image_tag @post.image, class: 'show_image' %>
 
 <!--
     handler = Gmaps.build('Google');
@@ -8,24 +8,19 @@
       handler.fitMapToBounds();
     }); -->
 
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
 
-        <title>Simple Map</title>
-        <meta name="viewport" content="initial-scale=1.0">
-        <meta charset="utf-8">
-        <style>
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-
-            }
-            #map {
-                height: 500px;
-                width: 100%;
-            }
-        </style>
-    </head>
-    <body>
+        }
+        #map {
+            height: 500px;
+            width: 600px;
+            margin: auto;
+        }
+    </style>
     <div id="map"></div>
     <script>
 
@@ -39,3 +34,6 @@
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+
+    <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get,class:"btn" %>
+    <%= link_to '削除', "/posts/#{@post.id}", method: :delete,class:"btn" %>

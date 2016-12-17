@@ -1,0 +1,11 @@
+<div class="imagezone" >
+    <%= image_tag post.image.url %><br>
+    <%= post.user.nickname %><br>
+    <div id=like-button>
+      <%= render partial: "likes/like", locals: { like: Like.find_by(user_id: current_user.id, post_id: post.id), post: post } %>
+    </div>
+  <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
+  <div class="description">
+    <p><%= post.title %></p>
+  </div>
+</div>

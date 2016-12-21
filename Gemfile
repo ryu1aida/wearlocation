@@ -50,7 +50,8 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
 # 自分で入れたやつ
-
+  gem 'acts-as-taggable-on', '~> 3.4'
+  gem 'gon'
 end
 
 

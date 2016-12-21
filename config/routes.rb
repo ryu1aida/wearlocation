@@ -12,7 +12,7 @@ Rails.application.routes.draw do
  delete  'posts/:id'  => 'posts#destroy'
  patch   'posts/:id'  => 'posts#update'
  get   'posts/:id/edit'  => 'posts#update'
- # いいね機能をつくっていく
+  # いいね機能をつくっていく
  # post 'like/:tweet_id' => 'likes#like', as: 'like'
  # delete 'unlike/:tweet_id' => 'likes#unlike', as: 'unlike'
 

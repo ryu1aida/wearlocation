@@ -16,7 +16,10 @@
           <%= f.text_field :description %><br>
           <%= f.text_field :latitude %><br>
           <%= f.text_field :longitude %><br>
-          <!-- <%= f.text_area :content %> -->
+          <div class="field">
+            <%= f.label :tag, "タグをつける" %><br>
+            <%= text_field_tag 'posts[tag]', @post.tag_list.join(',') %>
+          </div>
         </div>
 
           <%= f.submit '投稿する' %>
@@ -32,6 +35,10 @@
   <%= form_for @post do |f| %>
     <%= f.text_field :title, placeholder: 'title' %>
     <%= f.file_field :image %>
+    <div class="field">
+      <%= f.label :tag, "タグをつける" %><br>
+      <%= text_field_tag :tag, @post.tag_list.join(',') %>
+    </div>
     <%= f.submit %>
   <% end %>
 </div>

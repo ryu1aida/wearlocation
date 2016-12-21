@@ -17,6 +17,35 @@
 //= require gmaps/google
 //= require_tree .
 
+// ＃タグ機能の実装でぶっこんだやつ
+//= require jquery
+//= require jquery_ujs
+//= require tag-it
+//= require_tree .
+
+$( document ).ready(function(){
+  var i, len, ref, results, tag;
+  $('#post-tags').tagit({
+    fieldName: 'post[tag_list]',
+    singleField: true,
+    availableTags: gon.available_tags
+  });
+
+  if (gon.post_tags != null) {
+    ref = gon.post_tags;
+    results = [];
+    for (i = 0, len = ref.length; i < len; i++) {
+      tag = ref[i];
+      results.push($('#post-tags').tagit('createTag', tag));
+    }
+    return results;
+  }
+})
+// このjavascriptにより、#article-tagsのついたviewの要素がarticle[tag_list]の名前でpostされるようになります。また、既にタグ付けされている記事についてはgonにより予め入力フォームに表示されるようになります。
+
+
+
+
 // キャンパスの要素を取得する
 var canvas = document.getElementById( 'map-canvas' ) ;
 

@@ -1,16 +1,34 @@
+<div class="imagezone" >
   <% @posts.each do |post| %>
-    <div class="imagezone" >
-        <%= image_tag post.image.url %><br>
-        <%= post.user.nickname %><br>
-        <div id=like-button>
-          <%= render partial: "likes/like", locals: { like: Like.find_by(user_id: current_user.id, post_id: post.id), post: post } %>
-        </div>
-      <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
-      <div class="description">
+    <div class="image">
+      <%= image_tag post.image.url %><br>
+      <%= post.user.nickname %><br>
         <p><%= post.title %></p>
-      </div>
+      <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
+
+
+      <%= post.tag_list.each do |tag| %>
+      <%= tag[0]["name"] %>
+      <% end %>
+
     </div>
+
   <% end %>
   <div class="paginate">
     <%= paginate(@posts) %>
   </div>
+</div>
+
+<div class="section">
+   <i class="icon-crown color-gray-light"></i>投稿ランキング
+
+   <% @ranking.each.with_index(1) do |post, i| %>
+     <a href="/posts/<%= post %>">
+       <div class="box">
+             <%= i %>
+         </div>
+           <%= image_tag post.image.url %><br>
+     </a>
+   <% end %>
+
+</div>

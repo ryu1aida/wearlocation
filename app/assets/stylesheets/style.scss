@@ -1,3 +1,14 @@
+// #タグ機能でぶっこんだやつ
+/*
+ *= require_tree .
+ *= require jquery.tagit
+ *= require tagit.ui-zendesk
+ *= require_self
+*/
+
+
+
+
 @media only screen and (max-width: 979px) {
 
     Html{
@@ -49,9 +60,6 @@ header.header{
         margin-right: 300px;
         list-style: none;
       }
-      ul li {
-        float: right;
-      }
     }
   .loacation-icon.png {
     height: 30px;
@@ -66,6 +74,9 @@ header.header{
   header.title{
     font-size: 100px;
   }
+ul li {
+  froat:right;
+}
 
   header.heading-sentence{
     font-size: 30px;
@@ -83,16 +94,24 @@ header.header{
 
 body {
   background: rgb(250, 250, 250);
+  // 背景色の指定
   margin:0px;padding:0px;
+  // ヘッダーの固定
     .imagezone {
+    // 投稿１記事ずつに対する指定
       font-weight: normal;
       background-color: rgb(255, 255, 255);
+      // 背景色の指定
       border:solid thin rgb(237, 238, 238);
+      // 枠線の指定
       max-height: 800px;
+      // 高さの指定
       max-width: 400px;
+      // 横幅の指定
       margin: 80px auto;
+      // 投稿の
       padding: 0 0 0 0;
-
+      float: left;
 
         strong {
           font-weight: bold;
@@ -163,7 +182,10 @@ title {
 
 .contents{
   padding: 135px 0 0 0;
-  text-align: center;
+}
+
+.section{
+  float: right;
 }
 
 footer {
@@ -205,7 +227,6 @@ textarea{
   padding: 0px;
   text-align: center;
 }
-
 
 
 

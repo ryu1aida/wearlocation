@@ -1,34 +1,32 @@
-<div class="imagezone" >
-  <% @posts.each do |post| %>
-    <div class="image">
-      <%= image_tag post.image.url %><br>
+<div class="contents clearfix" >
+  <div class="left_content">
+    <% @posts.each do |post| %>
+      <%= image_tag post.image.url  :max_height => 20, :max_width => 20  %><br>
       <%= post.user.nickname %><br>
         <p><%= post.title %></p>
       <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
+        <%= post.tag_list.each do |tag| %>
+          <%= tag[0]["name"] %>
+        <% end %>
+    <% end %>
+  </div>
 
 
-      <%= post.tag_list.each do |tag| %>
-      <%= tag[0]["name"] %>
-      <% end %>
 
-    </div>
+  <div class="right_content">
+   <i class="icon-crown color-gray-light"></i>投稿ランキング
+    <% @ranking.each.with_index(1) do |post, i| %>
+      <a href="/posts/<%= post %>">
+        <div class="box">
+          <%= i %>
+        </div>
+          <%= image_tag post.image.url :max_height => 20, :max_width => 20  %><br>
+      </a>
+    <% end %>
+  </div>
 
-  <% end %>
   <div class="paginate">
     <%= paginate(@posts) %>
   </div>
-</div>
-
-<div class="section">
-   <i class="icon-crown color-gray-light"></i>投稿ランキング
-
-   <% @ranking.each.with_index(1) do |post, i| %>
-     <a href="/posts/<%= post %>">
-       <div class="box">
-             <%= i %>
-         </div>
-           <%= image_tag post.image.url %><br>
-     </a>
-   <% end %>
 
 </div>

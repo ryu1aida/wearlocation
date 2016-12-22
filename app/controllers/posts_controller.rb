@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # layout 'ranking_site'
   before_action :ranking, only: :index
-  before_action :set_article_tags_to_gon, only: [:edit]
+  before_action :set_article_tags_to_gon, only: :edit
   before_action :set_available_tags_to_gon, only: [:new, :edit]
 
   def index
@@ -26,7 +26,6 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.create(post_params)
     post.tag_list.add(params[:tag])
-    binding.pry
   end
 
   def destroy

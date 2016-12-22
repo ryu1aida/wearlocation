@@ -27,25 +27,23 @@
   </head>
 
 <body>
-
-  <header class="header">
-    <div class="header__bar row">
-       <h1 class="grid-6">WearLocation</h1>
-        <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <ul class="user__info">
-              <li>
-                <%= link_to image_tag('logout-icon.png',:size => '40x40'), destroy_user_session_path, method: :delete %>
-              </li>
-              <li>
-                <a class="post" href="/posts/new"><%= image_tag 'post-icon.png',:size => '40x40' %></a>
-              </li>
-            </ul>
-          </div>
-        <% else %>
-            <div class="grid-6">
-              <ul class="user__info">
-                <li>
+  <header>
+    <h1 class="title">WearLocation</h1>
+      <% if user_signed_in? %>
+        <div class="header_contents">
+          <ul class="header_link">
+            <li class="image_link">
+              <%= link_to image_tag('logout-icon.png',:size => '40x40'), destroy_user_session_path, method: :delete %>
+            </li>
+            <li class="image_link">
+              <a class="post" href="/posts/new"><%= image_tag 'post-icon.png',:size => '40x40' %></a>
+            </li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="header_contents">
+          <ul class="header_link">
+            <li class="image_link">
               <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '45x45' %></a>
             </li>
             <li>
@@ -53,17 +51,15 @@
               <a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '45x45' %></a>
             </li>
           </ul>
-            </div>
-        <% end %>
+        </div>
+      <% end %>
   </header>
 
-  <div class="contents clearfix">
    <%= yield %>
-  </div>
 
 
   <footer>
-    <p>Copyright(C) wearlocation ALL RIGHTS RESERVED.</p>
+    <p>Copyright(C) wearlocation ALL RIGHTS RESERVED.<p>
   </footer>
 
 </body>

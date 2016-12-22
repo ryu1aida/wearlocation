@@ -1,88 +1,14 @@
-// #タグ機能でぶっこんだやつ
-/*
- *= require_tree .
- *= require jquery.tagit
- *= require tagit.ui-zendesk
- *= require_self
-*/
-
-
-
-
-@media only screen and (max-width: 979px) {
-
-    Html{
-        Width:100%;
-    }
-} /*デバイスの横幅が979px以下の場合*/
-
-@media only screen and (min-width: 321px) and (max-width: 768px) {
-    Html{
-        Width:100%;
-    }
-
-} /*デバイスの横幅が321以上768以下の場合*/
-
-@media only screen and (max-width: 320px) {
-    header{
-        Width:90%;
-    }
-
-} /* デバイスの横幅が320px以下の場合 */
-
-
-
-
-
-
-//ヘッダー部分に関して
-header.header{
-  position: fixed;
-  margin-top: 0;
-  margin-bottom: 130px;
-  height: 75px;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  border-bottom:solid thin rgb(219, 219, 219);
-  text-align: center;
-  font-family: inherit;
-    h1.grid-6 {
-      line-height: 40px;
-      margin-top: 15px;
-      color: black;
-      margin-left: 300px;
-      float: left;
-    }
-
-    div.grid-6 {
-      ul.user__info{
-        margin-top: 20px;
-        margin-right: 300px;
-        list-style: none;
-      }
-    }
-  .loacation-icon.png {
-    height: 30px;
-    width: 30px;
-  }
-  .user_nav {
-    position: relative;
-    height: 100px;
-    position: absolute;
-    right: 0;
-  }
-  header.title{
-    font-size: 100px;
-  }
-ul li {
-  froat:right;
+body, html {
+  height: 100%;
 }
 
-  header.heading-sentence{
-    font-size: 30px;
-  }
+h1, h2, h3, h4, h5, h6, p, body {
+  font-size: 14px;
+  color: #4a4a4a;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
-
 
 .clearfix:after {
   content: "";
@@ -90,46 +16,115 @@ ul li {
   display: block;
 }
 
-// ボディに関して
+//applicaation.html.erb
+header{
+  width: 100%;
+  height: 90px;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: rgb(255, 255, 255);
+  border-bottom:solid thin rgb(219, 219, 219);
+  position: fixed;
+  text-align: center;
+  font-family: inherit;
 
-body {
-  background: rgb(250, 250, 250);
-  // 背景色の指定
-  margin:0px;padding:0px;
-  // ヘッダーの固定
-    .imagezone {
-    // 投稿１記事ずつに対する指定
-      font-weight: normal;
-      background-color: rgb(255, 255, 255);
-      // 背景色の指定
-      border:solid thin rgb(237, 238, 238);
-      // 枠線の指定
-      max-height: 800px;
-      // 高さの指定
-      max-width: 400px;
-      // 横幅の指定
-      margin: 80px auto;
-      // 投稿の
-      padding: 0 0 0 0;
-      float: left;
+}
 
-        strong {
-          font-weight: bold;
-          padding-right: 5px;
-          font-size: 1.2em;
-        }
-    }
-  nav.pagination{
+// title {
+//   color: 111111;
+//   background: #ffffff;
+//   width: 500px;
+//   padding: 10px;
+// }
+
+
+.header_contents{
+   padding:0;
+  margin:25px 80px 25px 80px ;
+
+}
+
+.title{
+  margin:25px 200px 25px 400px ;
+  line-height: 40px;
+  color: black;
+  font-size: 30px;
+  float: left;
+
+}
+.header_link{
+  margin-top: 30px;
+  margin-right: 300px;
+
+
+}
+
+.image_link{
+  list-style: none;
+  display: inline-block;
+
+}
+
+
+
+footer {
+  position:　absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: gray;
+  p{
+    text-align: center;
     font-size: 20px;
-  }
-
-  .name{
-    text-align: left;
+    margin:10 auto;
   }
 }
 
 
+
+
+//index.html.erb
+.contents{
+  margin:0px;
+  width: 100%;
+  background: rgb(250, 250, 250);
+  border:solid thin rgb(237, 238, 238);
+  // 投稿１記事ずつに対する指定
+  // font-weight: normal;
+    // strong {
+    //   font-weight: bold;
+    //   padding-right: 5px;
+    //   font-size: 1.2em;
+    // }
+}
+.left_content{
+  width:1000px;
+  margin:150px 50px 0px 100px;
+  padding: 0 0 0 0;
+  background-color: rgb(255, 255, 255);
+  float:left;
+}
+.right_content{
+  width:600px;
+  margin:150px 100px 0px 50px;
+  padding: 0 0 0 0;
+  background-color: rgb(255, 255, 255);
+  float:left;
+}
+
+.img{
+  height: 80px;
+  width: 100px;
+
+}
+
+.paginate{
+  font-size: 20px;
+}
+
+
 .btn {
+  // ボタン全部に関するCSS
   display: inline-block;
   width: 200px;
   margin:10px;
@@ -152,54 +147,10 @@ body {
 
 
 
-.sign_in {
-  margin-top:20px;
-}
 
 
-footer{
-  margin-top: 20px;
-  height: 50px;
-  background-color: gray;
-}
 
-// #インデックス画面
-
-title {
-  color: 111111;
-  background: #ffffff;
-  width: 500px;
-  padding: 10px;
-}
-
-.timeline{
-  display: block;
-  background-color: #ffffff;
-  width:400px;
-  font-size: 34px;
-  text-align: center;
-}
-
-.contents{
-  padding: 135px 0 0 0;
-}
-
-.section{
-  float: right;
-}
-
-footer {
-  position:　absolute;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-    footer.p{
-      text-align: center;
-    }
-}
-
-
-// #投稿画面━━━━━━━━━━━━━━━━━━━━━━━━━
+// new.html.erb
 div.h3 {
   background: #ffffff;
   width: 500px;
@@ -278,3 +229,38 @@ textarea{
 	margin: 100px ;
 	padding: 0 0 56.25% ;
 }
+
+
+
+
+// #タグ機能でぶっこんだやつ
+/*
+ *= require_tree .
+ *= require jquery.tagit
+ *= require tagit.ui-zendesk
+ *= require_self
+*/
+
+
+
+
+@media only screen and (max-width: 979px) {
+
+    Html{
+        Width:100%;
+    }
+} /*デバイスの横幅が979px以下の場合*/
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    Html{
+        Width:100%;
+    }
+
+} /*デバイスの横幅が321以上768以下の場合*/
+
+@media only screen and (max-width: 320px) {
+    header{
+        Width:90%;
+    }
+
+} /* デバイスの横幅が320px以下の場合 */

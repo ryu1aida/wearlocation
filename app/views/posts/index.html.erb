@@ -1,26 +1,43 @@
 <div class="contents clearfix" >
   <div class="left_content">
     <% @posts.each do |post| %>
-      <%= image_tag post.image.url  :max_height => 20, :max_width => 20  %><br>
-      <%= post.user.nickname %><br>
-        <p><%= post.title %></p>
-      <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
-        <%= post.tag_list.each do |tag| %>
-          <%= tag[0]["name"] %>
-        <% end %>
+      <div class="post_card">
+        <%= image_tag post.image.url, :class=> "left_image",  :width => '60%',:height => "auto"  %><br>
+          <div class="info_box">
+            <div class="profile_box">
+              <div class="user_image_box">
+              </div>
+              <span class="use_name_box">
+                <%= post.user.nickname %>
+              </span>
+            </div>
+
+            <div class="function_box">
+              <div class="like_function_box">
+              </div>
+              <!-- <p><%= post.title %></p> -->
+              <div class="show_function_box">
+                <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
+              </div>
+            </div>
+            <%= post.tag_list.each do |tag| %>
+              <%= tag[0]["name"] %>
+              <% end %>
+          </div>
+      </div>
     <% end %>
   </div>
 
 
 
   <div class="right_content">
-   <i class="icon-crown color-gray-light"></i>投稿ランキング
+   <i class="toukouranking">投稿ランキング</i>
     <% @ranking.each.with_index(1) do |post, i| %>
       <a href="/posts/<%= post %>">
         <div class="box">
           <%= i %>
         </div>
-          <%= image_tag post.image.url :max_height => 20, :max_width => 20  %><br>
+          <%= image_tag post.image.url, :class=>"right_image",  :width => '70%',:height => "auto"  %><br>
       </a>
     <% end %>
   </div>

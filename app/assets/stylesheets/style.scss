@@ -3,7 +3,7 @@ body, html {
 }
 
 h1, h2, h3, h4, h5, h6, p, body {
-  font-size: 14px;
+  font-size: 25px;
   color: #4a4a4a;
   font-family: sans-serif;
   margin: 0;
@@ -97,19 +97,72 @@ footer {
     //   font-size: 1.2em;
     // }
 }
+
+.left_image{
+  margin:0px 200px;
+}
+.right_image{
+  margin:0px 90px;
+}
+
+
 .left_content{
   width:1000px;
-  margin:150px 50px 0px 100px;
+  margin:150px 50px 80px 100px;
   padding: 0 0 0 0;
-  background-color: rgb(255, 255, 255);
   float:left;
 }
+.post_card{
+  margin-bottom: 80px;
+  float:left;
+  background-color: rgb(255, 255, 255);
+  border:1px solid rgb(239, 239, 239);
+}
+
+
+.info_box{
+  width: 1000px;
+  height: 200px;
+}
+
+.profile_box{
+height: 100px;
+}
+
+.user_image_box{
+
+  font-size: 30px;
+
+}
+.function_box{
+  height: 100px;
+}
+
+.like_function_box{
+
+}
+.show_function_box{
+ float:right;
+ margin:20px 50px 20px 0px;
+}
+
+.user_name_box{
+  
+}
+
+
+
 .right_content{
   width:600px;
   margin:150px 100px 0px 50px;
   padding: 0 0 0 0;
   background-color: rgb(255, 255, 255);
+  border:1px solid rgb(239, 239, 239);
   float:left;
+}
+
+.toukouranking{
+  font-size: 30px;
 }
 
 .img{

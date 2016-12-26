@@ -15,7 +15,7 @@
             <div class="function_box">
               <div class="like_function_box">
                 <div id=like-button>
-                            <%= render partial: "likes/like", locals: { like: Like.find_by(user_id: current_user.id, post_id: post.id), post: post } %>
+                            <%= render partial: "likes/like", locals: { like: Like.find_by( post_id: post.id), post: post } %>
                 </div>
               </div>
               <!-- <p><%= post.title %></p> -->
@@ -29,6 +29,10 @@
           </div>
       </div>
     <% end %>
+    <div class="paginate">
+      <%= paginate(@posts) %>
+    </div>
+
   </div>
 
 
@@ -45,9 +49,6 @@
     <% end %>
   </div>
 
-  <div class="paginate">
-    <%= paginate(@posts) %>
-  </div>
 
 
 </div>

@@ -1,0 +1,9 @@
+<% tag_list.each do |tag| %>
+  <span class="label label-primary"><%= tag %></span>
+<% end %>
+
+<%= render 'posts/tag_list', tag_list: @post.tag_list %></td> -->
+      <td><%= link_to 'Show', user %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      

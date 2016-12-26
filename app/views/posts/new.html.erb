@@ -1,44 +1,43 @@
-<!-- 以下擬似コメントアウト -->
+<div class="contents">
+  <% if false %>
+    <div class="new_content">
+      <%= form_tag('/posts', method: :post) do %>
+        <h1>
+          投稿する
+        </h1>
 
-<% if false %>
-  <div class="contents row">
-    <%= form_tag('/posts', method: :post) do %>
-      <h1>
-        投稿する
-      </h1>
-
-      <%= form_for(@post) do |f| %>
-        <div>
-          タイトルを入力<br>
-          <%= f.text_field :title %><br>
-          <%= f.file_field :image %><br>
-          <%= f.text_field :name %><br>
-          <%= f.text_field :description %><br>
-          <%= f.text_field :latitude %><br>
-          <%= f.text_field :longitude %><br>
-          <div class="field">
-            <%= f.label :tag, "タグをつける" %><br>
-            <%= text_field_tag 'posts[tag]', @post.tag_list.join(',') %>
+        <%= form_for(@post) do |f| %>
+          <div>
+            タイトルを入力<br>
+            <%= f.text_field :title %><br>
+            <%= f.file_field :image %><br>
+            <%= f.text_field :name %><br>
+            <%= f.text_field :description %><br>
+            <%= f.text_field :latitude %><br>
+            <%= f.text_field :longitude %><br>
+            <div class="field">
+              <%= f.label :tag, "タグをつける" %><br>
+              <%= text_field_tag 'posts[tag]', @post.tag_list.join(',') %>
+            </div>
           </div>
-        </div>
 
-          <%= f.submit '投稿する' %>
-        <!-- <input type="submit" value="SEND"> -->
+            <%= f.submit '投稿する' %>
+          <!-- <input type="submit" value="SEND"> -->
+        <% end %>
       <% end %>
+    </div>
+  <% end %>
+
+
+  <div>
+    <%= form_for @post do |f| %>
+      <%= f.text_field :title, placeholder: 'title' %>
+      <%= f.file_field :image %>
+      <div class="field">
+        <%= f.label :tag, "タグをつける" %><br>
+        <%= text_field_tag :tag, @post.tag_list.join(',') %>
+      </div>
+      <%= f.submit %>
     <% end %>
   </div>
-<% end %>
-
-<!-- 擬似コメントアウトここまで -->
-
-<div>
-  <%= form_for @post do |f| %>
-    <%= f.text_field :title, placeholder: 'title' %>
-    <%= f.file_field :image %>
-    <div class="field">
-      <%= f.label :tag, "タグをつける" %><br>
-      <%= text_field_tag :tag, @post.tag_list.join(',') %>
-    </div>
-    <%= f.submit %>
-  <% end %>
 </div>

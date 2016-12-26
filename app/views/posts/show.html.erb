@@ -1,12 +1,12 @@
-  <%= image_tag @post.image, class: 'show_image' %>
-
-<!--
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(#{raw @hash.to_json});
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-    }); -->
+<div class="contents">
+  <div class="show_content">
+    <%= image_tag @post.image, class: 'show_image' %>
+      <!--    handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+            markers = handler.addMarkers(#{raw @hash.to_json});
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+          }); -->
 
     <style>
         html, body {
@@ -17,8 +17,7 @@
         }
         #map {
             height: 500px;
-            width: 600px;
-            margin: auto;
+            width: 800px;
         }
     </style>
     <div id="map"></div>
@@ -39,16 +38,14 @@
     <table>
       <thead>
         <tr>
-          <th>タグ</th>
+          <th></th>
           <th colspan="3"></th>
         </tr>
       </thead>
-      <%= render 'posts/tag_list', tag_list: @post.tag_list %></td>
-            <!-- <td><%= link_to 'Show', user %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
     </table>
 
 
     <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get,class:"btn" %>
     <%= link_to '削除', "/posts/#{@post.id}", method: :delete,class:"btn" %>
+  </div>
+</div>

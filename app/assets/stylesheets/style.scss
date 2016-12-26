@@ -24,7 +24,7 @@ header{
   padding-top: 0;
   background-color: rgb(255, 255, 255);
   border-bottom:solid thin rgb(219, 219, 219);
-  position: fixed;
+  position:fixed; z-index: 1;
   text-align: center;
   font-family: inherit;
 
@@ -53,9 +53,6 @@ header{
 
 }
 .header_link{
-  margin-top: 30px;
-  margin-right: 300px;
-
 
 }
 
@@ -86,7 +83,10 @@ footer {
 //index.html.erb
 .contents{
   margin:0px;
+  padding: 0px;
   width: 100%;
+  position: relative;
+
   background: rgb(250, 250, 250);
   border:solid thin rgb(237, 238, 238);
   // 投稿１記事ずつに対する指定
@@ -99,7 +99,7 @@ footer {
 }
 
 .left_image{
-  margin:0px 200px;
+margin: 0px 200px;
 }
 .right_image{
   margin:0px 90px;
@@ -109,7 +109,6 @@ footer {
 .left_content{
   width:1000px;
   margin:150px 50px 80px 100px;
-  padding: 0 0 0 0;
   float:left;
 }
 .post_card{
@@ -121,8 +120,10 @@ footer {
 
 
 .info_box{
-  width: 1000px;
+  width: 600px;
   height: 200px;
+  padding:10px 200px;
+
 }
 
 .profile_box{
@@ -143,11 +144,11 @@ height: 100px;
 }
 .show_function_box{
  float:right;
- margin:20px 50px 20px 0px;
+ // margin:20px 50px 20px 0px;
 }
 
 .user_name_box{
-  
+ line-height: 100px;
 }
 
 
@@ -155,7 +156,7 @@ height: 100px;
 .right_content{
   width:600px;
   margin:150px 100px 0px 50px;
-  padding: 0 0 0 0;
+  padding: 0px 0px 20px 0px;
   background-color: rgb(255, 255, 255);
   border:1px solid rgb(239, 239, 239);
   float:left;
@@ -172,22 +173,24 @@ height: 100px;
 }
 
 .paginate{
-  font-size: 20px;
+  font-size: 30px;
+  position: absolute;
+  bottom: 10px;
+  left: 35.5%;
 }
 
 
 .btn {
   // ボタン全部に関するCSS
   display: inline-block;
-  width: 200px;
-  margin:10px;
-  padding-top:10px;
-  padding-bottom:10px;
-  font-size: 14px;
+  line-height: 40px;
+  width: 250px;
+  padding: 10px;
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
   color:#fff;
-  border:2px solid rgb(219, 219, 219);
+  border:2px solid rgba(10, 10, 10,0.3);
   background-color:rgb(237, 238, 238);
   text-decoration: none;
   &:hover {
@@ -199,11 +202,38 @@ height: 100px;
 }
 
 
+.ranking_number_box{
+  line-height: auto;
+  width: 18px;
+  padding: 10px;
+  margin-left: 30px;
+  border: 5px solid rgb(245, 245, 245);
+  border-radius:100px;
+  color: rgb(245, 245, 245);
+  background-color: rgba(10, 10, 10,0.8);
+  opacity: 50%;
+  text-align: center;
+}
 
+
+.ranking{
+  height: 50px;
+  width:auto;
+  padding: 20px 30px 0px 30px;
+  text-align: center;
+
+}
 
 
 
 // new.html.erb
+.new_content{
+  height:auto;
+  width: 600px;
+  float: left;
+}
+
+
 div.h3 {
   background: #ffffff;
   width: 500px;
@@ -235,6 +265,13 @@ textarea{
 
 
 
+//show.html.erb
+.show_content{
+  // width: 400px;
+  // height: auto;
+  // float: left;
+  margin:150px 50px 80px 100px;
+}
 
 
 
@@ -247,41 +284,41 @@ textarea{
 
 
 //マップに関するCSS━━━━━━━━━━━━━━━━━━━━━━━━━
-.map-embed
-{
-	max-width: 100% ;
-	height: 100px ;
-	margin: 100px ;
-	padding: 0 0 56.25% ;
-	overflow: hidden ;
-	position: relative ;
-	top: 0 ;
-	left: 0 ;
-}
-
-.map-embed > div
-{
-	position: absolute ;
-	top: 100px ;
-	left: 100px ;
-	width: 100% ;
-	height: 100% ;
-	margin: 0 ;
-	padding: 0 ;
-}
-
-.map-embed img
-{
-	max-width: none ;
-
-}
-
-.map-canvas{
-  max-width: 100% ;
-	height: 100px ;
-	margin: 100px ;
-	padding: 0 0 56.25% ;
-}
+// .map-embed
+// {
+// 	max-width: 100% ;
+// 	height: 100px ;
+// 	margin: 100px ;
+// 	padding: 0 0 56.25% ;
+// 	overflow: hidden ;
+// 	position: relative ;
+// 	top: 0 ;
+// 	left: 0 ;
+// }
+//
+// .map-embed > div
+// {
+// 	position: absolute ;
+// 	top: 100px ;
+// 	left: 100px ;
+// 	width: 100% ;
+// 	height: 100% ;
+// 	margin: 0 ;
+// 	padding: 0 ;
+// }
+//
+// .map-embed img
+// {
+// 	max-width: none ;
+//
+// }
+//
+// .map-canvas{
+//   max-width: 100% ;
+// 	height: 100px ;
+// 	margin: 100px ;
+// 	padding: 0 0 56.25% ;
+// }
 
 
 
@@ -294,26 +331,26 @@ textarea{
  *= require_self
 */
 
-
-
-
-@media only screen and (max-width: 979px) {
-
-    Html{
-        Width:100%;
-    }
-} /*デバイスの横幅が979px以下の場合*/
-
-@media only screen and (min-width: 321px) and (max-width: 768px) {
-    Html{
-        Width:100%;
-    }
-
-} /*デバイスの横幅が321以上768以下の場合*/
-
-@media only screen and (max-width: 320px) {
-    header{
-        Width:90%;
-    }
-
-} /* デバイスの横幅が320px以下の場合 */
+//
+//
+//
+// @media only screen and (max-width: 979px) {
+//
+//     Html{
+//         Width:100%;
+//     }
+// } /*デバイスの横幅が979px以下の場合*/
+//
+// @media only screen and (min-width: 321px) and (max-width: 768px) {
+//     Html{
+//         Width:100%;
+//     }
+//
+// } /*デバイスの横幅が321以上768以下の場合*/
+//
+// @media only screen and (max-width: 320px) {
+//     header{
+//         Width:90%;
+//     }
+//
+// } /* デバイスの横幅が320px以下の場合 */

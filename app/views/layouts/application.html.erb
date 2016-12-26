@@ -33,10 +33,10 @@
         <div class="header_contents">
           <ul class="header_link">
             <li class="image_link">
-              <%= link_to image_tag('logout-icon.png',:size => '40x40'), destroy_user_session_path, method: :delete %>
+              <%= link_to image_tag('logout-icon.png',:size => '60x60'), destroy_user_session_path, method: :delete %>
             </li>
             <li class="image_link">
-              <a class="post" href="/posts/new"><%= image_tag 'post-icon.png',:size => '40x40' %></a>
+              <a class="post" href="/posts/new"><%= image_tag 'post-icon.png',:size => '60x60' %></a>
             </li>
           </ul>
         </div>
@@ -44,11 +44,11 @@
         <div class="header_contents">
           <ul class="header_link">
             <li class="image_link">
-              <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '45x45' %></a>
+              <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '65x65' %></a>
             </li>
             <li>
                <!-- <%= link_to "ログイン", new_user_session_path, class: 'posts' %> -->
-              <a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '45x45' %></a>
+              <a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '65x65' %></a>
             </li>
           </ul>
         </div>
@@ -58,7 +58,10 @@
    <%= yield %>
 
 
+
+
   <footer>
+
     <p>Copyright(C) wearlocation ALL RIGHTS RESERVED.<p>
   </footer>
 

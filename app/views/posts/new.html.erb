@@ -17,10 +17,9 @@
             <%= f.text_field :longitude %><br>
             <div class="field">
               <%= f.label :tag, "タグをつける" %><br>
-              <%= text_field_tag 'posts[tag]', @post.tag_list.join(',') %>
+              <%= f.text_field_tag 'tags[name]', @post.tag_list.join(','), "data-role" => "tagsinput" %>
             </div>
           </div>
-
             <%= f.submit '投稿する' %>
           <!-- <input type="submit" value="SEND"> -->
         <% end %>
@@ -37,7 +36,7 @@
         <%= f.label :tag, "タグをつける" %><br>
         <%= text_field_tag :tag, @post.tag_list.join(',') %>
       </div>
-      <%= f.submit %>
+      <%= f.submit  %>
     <% end %>
   </div>
 </div>

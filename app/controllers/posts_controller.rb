@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   # layout 'ranking_site'
-  before_action :ranking, only: :index
+  before_action :ranking
   before_action :set_article_tags_to_gon, only: :edit
   before_action :set_available_tags_to_gon, only: [:new, :edit]
 
+
   def index
     @posts = Post.includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @places = Place.all
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
       marker.lat place.latitude
       marker.lng place.longitude
@@ -24,19 +24,24 @@ class PostsController < ApplicationController
   end
 
   def create
+    redirect_to action: :index
     post = current_user.posts.create(post_params)
-    post.tag_list.add(params[:tag])
+    post.tag_list.add(params[:tag,])
+    post.save
   end
 
   def destroy
+    redirect_to action: :index
     post = Post.find(params[:id])
     if post.user_id == current_user.id
       post.destroy
     end
+    post.tag_list.remove(params[:tag])
   end
 
   def edit
        @post = Post.find(params[:id])
+       post.tag_list
   end
 
   def update
@@ -64,6 +69,6 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post)
-            .permit(:title, :image, :content, :tag)
+            .permit(:title, :image, :content,:profile, :tag)
     end
 end

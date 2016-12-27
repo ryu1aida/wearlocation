@@ -1,23 +1,23 @@
 
 <!-- like機能 -->
           <% if user_signed_in? %>
-              <% if post.like_user(current_user.id) %>
+              <% if post.like_user(current_user.id, post.id) %>
 
-                <%= link_to post_like_path(like, post_id: post.id), method: :delete, id: "like-button", remote: true do %>
+                <%= link_to "/posts/#{post.id}/likes/#{post.like_user(current_user.id, post.id).id}", method: :delete, id: "like-button", remote: true do %>
 
-                  <%= image_tag("like-button.png",:width =>"40",:height => "40") %>
-
-                <% end %>
-                <span>
-                  いいね<%= post.likes_count %>件
-                </span>
-              <% else %>
-                <%= link_to post_likes_path(post),id: "like-button", remote: true do %>
                   <%= image_tag("liked-button.png",:width =>"40",:height => "40") %>
 
                 <% end %>
                 <span>
-                  いいね<%= post.likes_count %>件
+                  いいね<%= post.likes.count %>件
+                </span>
+              <% else %>
+                <%= link_to post_likes_path(post_id: post.id),id: "like-button", method: :post, remote: true do %>
+                  <%= image_tag("like-button.png",:width =>"40",:height => "40") %>
+
+                <% end %>
+                <span>
+                  いいね<%= post.likes.count %>件
                 </span>
               <% end %>
             <% end %>

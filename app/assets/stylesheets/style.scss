@@ -10,6 +10,15 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding: 0;
 }
 
+a{
+  text-decoration: none;
+&:hover{
+  background-color: white;
+  color: black;
+  }
+}
+
+
 .clearfix:after {
   content: "";
   clear: both;
@@ -40,28 +49,38 @@ header{
 
 .header_contents{
    padding:0;
-  margin:25px 80px 25px 80px ;
 
 }
 
 .title{
-  margin:25px 200px 25px 400px ;
+  margin:25px 100px 0 100px;
   line-height: 40px;
   color: black;
-  font-size: 30px;
+  font-size: 45px;
   float: left;
+  text-decoration:none;
 
 }
 .header_link{
+  width: 200px;
+  height: auto;
+  margin: 15px 100px 0 100px;
+  float:right;
 
 }
 
 .image_link{
   list-style: none;
   display: inline-block;
-
+  text-decoration: none;
 }
 
+.profile{
+  width:60px;
+  height: 60px;
+  border: 5px solid rgb(245, 245, 245);
+  border-radius:30px;
+}
 
 
 footer {
@@ -128,13 +147,23 @@ margin: 0px 200px;
 height: 100px;
 }
 
-.user_image_box{
-
+.user_name_box{
   font-size: 30px;
 
 }
+.user_image_box{
+  height: 70px;
+  width: 70px;
+  margin:10px;
+  float:left;
+
+}
 .function_box{
-  height: 100px;
+  height: auto;
+}
+
+.tag_function_box{
+
 }
 
 .like_function_box{
@@ -160,7 +189,7 @@ height: 100px;
   padding: 0px 0px 20px 0px;
   background-color: rgb(255, 255, 255);
   border:1px solid rgb(239, 239, 239);
-  float:left;
+  float:right;
 }
 
 .toukouranking{
@@ -179,6 +208,24 @@ height: 100px;
   text-align: right;
 }
 
+.tag{
+  display: inline-block;
+  line-height: auto;
+  width: auto;
+  padding: 10px;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  color:white;
+  border:2px solid gray;
+  border-radius: 30px;
+  background-color:rgb(102, 102, 102);
+  text-decoration: none;
+  &:hover {
+    opacity: 0.5;
+    transition: .1s;
+    }
+}
 
 .btn {
   // ボタン全部に関するCSS
@@ -232,6 +279,11 @@ background-color: white;
 }
 
 
+.tag{
+
+}
+
+
 
 // new.html.erb
 .new_content{
@@ -279,15 +331,9 @@ textarea{
   // float: left;
   margin:150px 50px 80px 100px;
 }
+//
 
-
-
-
-
-
-
-
-
+// tag-it実装
 
 
 //マップに関するCSS━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -327,6 +373,26 @@ textarea{
 // 	padding: 0 0 56.25% ;
 // }
 
+
+
+.image > img {
+  width: 400px;
+}
+
+.show_image {
+  width: 600px;
+}
+
+.map_wrapper {
+  width: 600px;
+  height:  500px;
+  margin: auto;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
 
 
 

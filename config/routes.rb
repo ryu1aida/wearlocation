@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   resources :places
   devise_for :users
-  root 'posts#index'
   resources  :posts do
    resources :likes, only: [:create, :destroy]
   end
+  root 'posts#index'
  get   'posts/new'  =>  'posts#new'
  post  'posts'      =>  'posts#create'
  get   "posts/:id" => "posts#show"

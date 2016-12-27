@@ -14,21 +14,4 @@
  *= require_self
  */
 
-.image > img {
-  width: 400px;
-}
-
-.show_image {
-  width: 600px;
-}
-
-.map_wrapper {
-  width: 600px;
-  height:  500px;
-  margin: auto;
-}
-
-#map {
-    height: 500px;
-    width: 100%;
-}
+/*require bootstrap-tagsinput*/

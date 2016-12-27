@@ -54,7 +54,7 @@ group :development do
   gem 'gon'
 end
 
-
+gem 'paperclip'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'

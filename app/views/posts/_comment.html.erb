@@ -1,0 +1,11 @@
+<section class="col-md-12">
+  <div class="sct_inner">
+    <% post.comments.each do |comment| %>
+    <!-- <p><%= link_to answer.user.name, user_path(answer.user) %>さんの回答</p> -->
+    <%= comment.text %>
+    <% end %>
+  </div>
+</section>
+
+
+<!-- <%= render partial: "posts/comment", collection: @comments %> -->

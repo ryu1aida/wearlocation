@@ -1,0 +1,15 @@
+<div class="contents">
+  <div class="comment form">
+    <div class="###">
+      <%= form_for(@comment) do |f| %>
+        <h3><span>Comment</span><%= @comment.text %></h3>
+        <div class="form-group">
+          <%= f.text_area :text, placeholder: "回答を入力してください", cols:"30", rows:"10", autofocus:"true", class:"form-control" %>
+        </div>
+        <%= f.hidden_field :post_id %>
+        <%= f.submit "回答する", class:"btn"%>
+      <% end %>
+    </div>
+  </div>
+
+</div>

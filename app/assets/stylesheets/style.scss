@@ -138,7 +138,7 @@ margin: 0px 200px;
 
 .info_box{
   width: 600px;
-  height: 200px;
+  height: auto;
   padding:10px 200px;
 
 }
@@ -178,9 +178,26 @@ height: 100px;
 }
 
 .user_name_box{
- line-height: 100px;
+ line-height: 60px;
 }
 
+.comment_function_box{
+
+
+}
+
+.comment_count_box{
+  padding: 10px 25px;
+  float: left;
+}
+
+.comment_submit_box{
+
+}
+
+.comment{
+  padding: 10px;
+}
 
 
 .right_content{
@@ -253,6 +270,12 @@ color: black;
 background-color: white;
 }
 
+
+time {
+  // padding:0 20px;
+  font-size: 16px;
+  color:gray;
+}
 
 
 

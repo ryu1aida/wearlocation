@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :places
   has_many :likes, dependent: :destroy
+  has_many :comments
   def like_user(user_id, post_id)
     Like.find_by(user_id: user_id, post_id: post_id)
   end

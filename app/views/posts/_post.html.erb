@@ -8,7 +8,8 @@
           </div>
           <span class="user_name_box">
             <%= post.user.nickname %>
-          </span>
+          </span></br>
+           <time><%= time_ago_in_words post.created_at %></time>
         </div>
 
         <div class="tag_function_box">
@@ -29,7 +30,21 @@
           <div class="show_function_box">
             <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
           </div>
-        </div>
 
+          <div class="comment_function_box">
+            <div class="comment_count_box">
+              <span>コメント<%= post.comments.count %>件</span>
+            </div>
+            <div class="comment_submit_box">
+             <%= form_tag(new_comment_path, method: :get, class: "comment_submit") do %>
+             <%= hidden_field_tag(:post_id, post.id) %>
+             <%= submit_tag("コメントする") %>
+             <% end %>
+           </div>
+            <% post.comments.each do |comment| %>
+            <div class "comment"><%= comment.text %></div></br>
+            <% end %>
+          </div>
+        </div>
       </div>
   </div>

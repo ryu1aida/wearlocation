@@ -212,18 +212,18 @@ height: 100px;
   display: inline-block;
   line-height: auto;
   width: auto;
-  padding: 10px;
-  font-size: 8px;
+  padding: 6px;
+  font-size: 4px;
   font-weight: bold;
   text-align: center;
   color:white;
   border:2px solid gray;
   border-radius: 30px;
-  background-color:rgb(102, 102, 102);
+  background-color:rgba(10,10,10,0.7);
   text-decoration: none;
   &:hover {
     opacity: 0.5;
-    transition: .1s;
+    transition: .2s;
     }
 }
 
@@ -334,6 +334,72 @@ textarea{
 //
 
 // tag-it実装
+// .tag {
+//   width:auto;
+// 	margin: 0;
+// 	padding: 0;
+// 	list-style: none;
+// }
+// .taglist {
+// 	display: inline-block;
+// 	margin: 0 0 .3em 1em;
+// 	padding: 0;
+// }
+//  .taglist a {
+// 	position: relative;
+// 	display: inline-block;
+// 	height: 30px;
+// 	line-height: 30px;
+// 	padding: 0 1em;
+// 	background-color: #3498db;
+// 	border-radius: 0 3px 3px 0;
+// 	color: #fff;
+// 	font-size: 13px;
+// 	text-decoration: none;
+// 	-webkit-transition: .2s;
+// 	transition: .2s;
+// }
+// .taglist a::before {
+// 	position: absolute;
+// 	top: 0;
+// 	left: -15px;
+// 	content: '';
+// 	width: 0;
+// 	height: 0;
+// 	border-color: transparent #3498db transparent transparent;
+// 	border-style: solid;
+// 	border-width: 15px 15px 15px 0;
+// 	-webkit-transition: .2s;
+// 	transition: .2s;
+// }
+// .taglist a::after {
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 0;
+// 	display: block;
+// 	content: '';
+// 	width: 6px;
+// 	height: 6px;
+// 	margin-top: -3px;
+// 	background-color: #fff;
+// 	border-radius: 100%;
+// }
+// .taglist span {
+// 	display: block;
+// 	max-width: 100px;
+// 	white-space: nowrap;
+// 	text-overflow: ellipsis;
+// 	overflow: hidden;
+// }
+// .taglist a:hover {
+// 	background-color: #555;
+// 	color: #fff;
+// }
+// .taglist a:hover::before {
+// 	border-right-color: #555;
+// }
+
+
 
 
 //マップに関するCSS━━━━━━━━━━━━━━━━━━━━━━━━━

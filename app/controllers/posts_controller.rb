@@ -26,7 +26,8 @@ class PostsController < ApplicationController
   def create
     redirect_to action: :index
     post = current_user.posts.create(post_params)
-    post.tag_list.add(params[:tag,])
+    post.tag_list.add(params[:tag])
+    post.tag_list.add()
     post.save
   end
 
@@ -69,6 +70,6 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post)
-            .permit(:title, :image, :content,:profile, :tag)
+            .permit(:title, :image, :content,:profile, [:tag])
     end
 end

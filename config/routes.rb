@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :places
   devise_for :users
   resources :comments, only: [:new, :create]
   resources  :posts do
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   root 'posts#index'
  get   'posts/new'  =>  'posts#new'
  post  'posts'      =>  'posts#create'
- get   "posts/:id" => "posts#show"
+ get   "posts/:id"  =>  "posts#show"
  delete  'posts/:id'  => 'posts#destroy'
  patch   'posts/:id'  => 'posts#update'
  get   'posts/:id/edit'  => 'posts#update'

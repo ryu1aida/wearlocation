@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   before_action :set_available_tags_to_gon, only: [:new, :edit]
 
 
+
   def index
     @posts = Post.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
@@ -12,11 +13,11 @@ class PostsController < ApplicationController
       marker.lng place.longitude
       marker.infowindow place.name
     end
+    
   end
 
   def new
    @post = Post.new
-   @place = Place.new
   end
 
   def show
@@ -28,8 +29,10 @@ class PostsController < ApplicationController
     redirect_to action: :index
     post = current_user.posts.create(post_params)
     post.tag_list.add(params[:tag])
-    post.tag_list.add()
+    # post.tag_list.add()タグを複数投稿できるようにしたい
     post.save
+    @comment = Comment.create(post_params)
+
   end
 
   def destroy
@@ -58,6 +61,7 @@ class PostsController < ApplicationController
     @ranking = post_ids.map { |id| Post.find(id) }
   end
 
+
   def set_article_tags_to_gon
     gon.post_tags = @post.tag_list
   end
@@ -71,6 +75,6 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post)
-            .permit(:title, :image, :content,:profile, [:tag])
+            .permit(:title, :image, :content,:profile, [:tag],:text)
     end
 end

@@ -1,13 +1,21 @@
 class CommentsController < ApplicationController
 
+  def index
+    @comments = Comment.all
+    @comment = Comment.new
+  end
+
   def new
-     @post = Post.find(params[:post_id])
      @comment = Comment.new
      @comment.post_id = @post.id
    end
 
+   def show
+     @comment = Comment.find(params[:id])
+   end
+
    def create
-    @comment = Comment.create(create_params)
+     @comment = Comment.create(create_params)
   end
 
   private

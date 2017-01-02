@@ -72,6 +72,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    exifr (1.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
@@ -207,6 +208,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  exifr
   gmaps4rails
   gon
   jbuilder (~> 2.0)

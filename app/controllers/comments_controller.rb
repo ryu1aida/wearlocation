@@ -2,12 +2,10 @@ class CommentsController < ApplicationController
 
   def index
     @comments = Comment.all
-    @comment = Comment.new
   end
 
   def new
      @comment = Comment.new
-     @comment.post_id = @post.id
    end
 
    def show
@@ -15,7 +13,7 @@ class CommentsController < ApplicationController
    end
 
    def create
-     @comment = Comment.create(create_params)
+     comment = current_user.comment.create(create_params)
   end
 
   private

@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       marker.lng place.longitude
       marker.infowindow place.name
     end
-    
+
   end
 
   def new
@@ -22,7 +22,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
   end
 
   def create
@@ -31,7 +30,6 @@ class PostsController < ApplicationController
     post.tag_list.add(params[:tag])
     # post.tag_list.add()タグを複数投稿できるようにしたい
     post.save
-    @comment = Comment.create(post_params)
 
   end
 
@@ -75,6 +73,6 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post)
-            .permit(:title, :image, :content,:profile, [:tag],:text)
+            .permit(:title, :image, :content,:profile, [:tag])
     end
 end

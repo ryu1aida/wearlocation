@@ -12,13 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require underscore
+//= require turbolinks
 //= require gmaps/google
 //= require_tree .
-
-// ＃タグ機能の実装でぶっこんだやつ
-//= require tag-it
-
-// ブートストラップのタグ機能
-//= require bootstrap-tagsinput.min
+//= require not_enter.js

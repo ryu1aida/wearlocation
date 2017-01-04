@@ -34,9 +34,12 @@
       <%= f.file_field :image %>
       <div class="field">
         <%= f.label :tag, "タグをつける" %><br>
-        <%= text_field_tag :tag, @post.tag_list.join(',') %>
-              </div>
-      <%= f.submit  %>
+
+        <%= text_field_tag "protopype[tag][] ", @post.tag_list.join(','), "data-role" => "tagsinput" %>
+
+      </div>
+
+      <%= button_to "投稿", { :action => "create" }, :class => "btn"  %>
     <% end %>
   </div>
 </div>

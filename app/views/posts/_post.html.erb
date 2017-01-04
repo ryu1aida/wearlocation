@@ -13,9 +13,9 @@
         </div>
 
         <div class="tag_function_box">
-          <% post.tag_list.each do |tag| %>
+          <% post.tags.each do |tag| %>
           <div class="tag">
-            #<%= post.tag_list  %>
+            #<%= tag  %>
           </div>
           <% end %>
         </div>
@@ -34,19 +34,13 @@
           <div class="comment_function_box">
             <div class="comment_count_box">
               <span>コメント<%= post.comments.count %>件</span>
+
+              <div class="comment_show">
+                <%= render partial: "comments/comment" , :locals => { post: post } %>
+              </div>
             </div>
-
-            <ul>
-              <%= render partial: "comments/comment" %>
-            </ul>
-
-            <!-- <%= form_tag(new_comment_path, method: :get, class: "comment_submit") do %>
-            <%= hidden_field_tag(:post_id, post.id) %>
-            <%= submit_tag("コメントする") %>
-            <% end %> -->
-
-           </div>
           </div>
         </div>
       </div>
   </div>
+</div>

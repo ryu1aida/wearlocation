@@ -199,6 +199,43 @@ height: 100px;
   padding: 10px;
 }
 
+// _comment.html.erb
+.comment_function_box{
+}
+
+.form-control{
+  margin: 10px 0 10px 50px;
+}
+.comment_show{
+  margin-top: 10px;
+}
+.comment_comment{
+  padding:8px 0px 5px 20px;
+}
+
+.comment_btn{
+  float:right;
+  margin-bottom:10px;
+  display: inline-block;
+  line-height: 25px;
+  width: 150px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color:#666;
+  border:2px solid rgba(10, 10, 10,0.3);
+  background-color:rgb(237, 238, 238);
+  text-decoration: none;
+  &:hover {
+    background-color: #fff;
+	  border-color: rgb(56, 151, 240);
+	  color: rgb(56, 151, 240);
+    transition: .3s;
+    }
+}
+
+
 
 .right_content{
   width:600px;
@@ -343,8 +380,6 @@ textarea{
   padding: 0px;
   text-align: center;
 }
-
-
 
 
 //show.html.erb

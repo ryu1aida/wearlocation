@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
+
     redirect_to action: :index
     post = current_user.posts.create(post_params)
     tags = params[:tag_list].split(",")
@@ -35,8 +35,9 @@ class PostsController < ApplicationController
       post.tag_list.add(t)
     end
       post.save
-
-  end
+      t = MiniExiftool.new
+      p t.to_hash
+      end
 
   def destroy
     redirect_to action: :index

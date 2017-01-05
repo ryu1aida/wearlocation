@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@cicadas) do |cicada, marker|
      marker.lat cicada.latitude
      marker.lng cicada.longitude
-     marker.infowindow cicada.description
+     marker.infowindow cicada.address
      marker.json({title: cicada.title})
     end
   end

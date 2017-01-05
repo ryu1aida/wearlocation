@@ -50,8 +50,6 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
 # 自分で入れたやつ
-  gem 'acts-as-taggable-on', '~> 3.4'
-  gem 'gon'
 end
 gem 'exifr'
 gem 'paperclip'
@@ -63,3 +61,5 @@ gem 'pry-rails'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'mini_exiftool'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'gon'

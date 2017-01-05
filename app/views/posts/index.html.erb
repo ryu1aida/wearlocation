@@ -1,7 +1,7 @@
 <div class="contents clearfix">
 
   <div class="left_content">
-      <%= render @posts %>
+    <%= render partial: "posts/post", collection: @posts, locals: { comment: @comment } %>
       <div class="paginate">
         <%= paginate(@posts) %>
       </div>

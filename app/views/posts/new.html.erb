@@ -21,25 +21,31 @@
             </div>
           </div>
             <%= f.submit '投稿する' %>
-          <!-- <input type="submit" value="SEND"> -->
+          <input type="submit" value="SEND">
         <% end %>
       <% end %>
     </div>
   <% end %>
 
 
-  <div>
+  <div class="post_box">
     <%= form_for @post do |f| %>
-      <%= f.text_field :title, placeholder: 'title' %>
-      <%= f.file_field :image %>
+      <!-- <%= f.text_field :title, placeholder: 'title' %><br> -->
       <div class="field">
-        <%= f.label :tag, "タグをつける" %><br>
-
-        <%= text_field_tag "protopype[tag][] ", @post.tag_list.join(','), "data-role" => "tagsinput" %>
-
+        <%= f.label :image, "画像を選択する" %>
+          <!-- <div class="file_field"> -->
+            <%= f.file_field :image   %>
+          <!-- </div> -->
       </div>
-
-      <%= button_to "投稿", { :action => "create" }, :class => "btn"  %>
+      <div class="field">
+        <%= f.label :tag, "タグをつける" %>
+          <!-- <div class="tag_field"> -->
+            <%= text_field_tag :tag_list, @post.tag_list, "data-role" => "tagsinput", :class => "post_tag" %>
+          <!-- </div> -->
+      </div>
+      <div class="btn_field">
+        <%= button_to "投稿", { :action => "create" }, :class => "btn"  %>
+      </div>
     <% end %>
   </div>
 </div>

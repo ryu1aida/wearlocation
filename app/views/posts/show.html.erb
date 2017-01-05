@@ -1,49 +1,22 @@
 <div class="contents">
   <div class="show_content">
     <%= image_tag @post.image, class: 'show_image' %>
-      <!--    handler = Gmaps.build('Google');
-          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-            markers = handler.addMarkers(#{raw @hash.to_json});
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-          }); -->
 
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyDMg2LFSQiq6KbXDJJrlTTBjHMIw-X2tQU"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 
-        }
-        #map {
-            height: 500px;
-            width: 800px;
-        }
-    </style>
-    <div id="map"></div>
-    <script>
+  <div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
 
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 35.658581, lng: 139.745433},
-                zoom: 14
-            });
-        }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
-
-
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-    </table>
-
+  <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+  </script>
 
     <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get,class:"btn" %>
     <%= link_to '削除', "/posts/#{@post.id}", method: :delete,class:"btn" %>

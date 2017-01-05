@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
     def index
       @comments = Comment.all
+      @comment = Comment.new
     end
 
     def new
@@ -13,8 +14,9 @@ class CommentsController < ApplicationController
      end
 
      def create
-       @comment = Comment.create(create_params)
-       redirect_to controller: 'posts',action: :index
+       Comment.create(create_params)
+       @comment = Comment.new
+       @post = Post.find(params[:comment][:post_id])
     end
 
     private

@@ -116,7 +116,9 @@ footer {
 }
 
 .left_image{
-margin: 0px 200px;
+  // padding-bottom: 20px;
+  margin: 0px 100px;
+  border:2px solid  rgb(150, 150, 150);
 }
 .right_image{
   margin:0px 90px;
@@ -137,19 +139,26 @@ margin: 0px 200px;
 
 
 .info_box{
-  width: 600px;
+  width: 800px;
   height: auto;
-  padding:10px 200px;
+  padding:10px 100px;
+  // border-bottom: 5px solid  rgb(239, 239, 239);
+}
+
+.profile_info_box{
+  width: 800px;
+  height: auto;
+  padding:10px 100px;
 
 }
 
 .profile_box{
-height: 100px;
+height: 90px;
 }
 
 .user_name_box{
   font-size: 30px;
-
+ line-height: 100px;
 }
 .user_image_box{
   height: 70px;
@@ -158,12 +167,21 @@ height: 100px;
   float:left;
 
 }
-.function_box{
+time {
+  padding:0 20px;
+  line-height: 100px;
+  font-size: 20px;
+  color:gray;
+  float: right;
+}
+
+
+.image_card{
   height: auto;
+  border: 10px solid;
 }
 
 .tag_function_box{
-
 }
 
 .like_function_box{
@@ -177,9 +195,6 @@ height: 100px;
  margin:20px 0px 20px 0px;
 }
 
-.user_name_box{
- line-height: 60px;
-}
 
 .comment_function_box{
 
@@ -203,7 +218,8 @@ height: 100px;
 .comment_function_box{
 }
 
-.form-control{
+#form-control{
+  width:600px;
   margin: 10px 0 10px 50px;
 }
 .comment_show{
@@ -238,8 +254,8 @@ height: 100px;
 
 
 .right_content{
-  width:600px;
-  margin:50px 100px 0px 50px;
+  width:618px;
+  margin:50px 90px 0px 40px;
   padding: 0px 0px 20px 0px;
   background-color: rgb(255, 255, 255);
   border:1px solid rgb(239, 239, 239);
@@ -267,6 +283,7 @@ height: 100px;
   line-height: auto;
   width: auto;
   padding: 6px;
+  margin: 10px 0;
   font-size: 4px;
   font-weight: bold;
   text-align: center;
@@ -308,11 +325,6 @@ background-color: white;
 }
 
 
-time {
-  // padding:0 20px;
-  font-size: 16px;
-  color:gray;
-}
 
 
 
@@ -339,19 +351,51 @@ time {
 }
 
 
-.tag{
-
+.post_tag{
+  height:auto;
+  width: 600px;
 }
 
 
 
 // new.html.erb
+
+.post_box{
+  height:300px;
+  width:800px;
+  background-color:rgb(255, 255, 255);
+  border: 5px solid rgb(200, 200, 200);
+  border-radius: 30px;
+  padding:50px 80px;
+  margin: 40px auto;
+
+}
 .new_content{
   height:auto;
   width: 600px;
   float: left;
 }
 
+.field{
+  width: auto;
+  height: auto;
+  padding:20px;
+  border: 2px solid gray;
+    border-radius: 15px;
+    // float:left;
+}
+
+.file_field{
+  float:right;
+}
+.tag_field{
+  padding:5px;
+}
+
+.btn_field{
+  padding: 25px 5px 0 5px ;
+  text-align: right;
+}
 
 div.h3 {
   background: #ffffff;

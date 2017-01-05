@@ -1,16 +1,19 @@
 
   <div class="post_card">
-    <%= image_tag post.image.url, :class=> "left_image",  :width => '60%',:height => "auto"  %><br>
-      <div class="info_box">
-        <div class="profile_box">
-          <div class="user_image_box">
-            <%= image_tag post.user.profile, :class=>"profile" %>
-          </div>
-          <span class="user_name_box">
-            <%= post.user.nickname %>
-          </span></br>
-           <time><%= time_ago_in_words post.created_at %></time>
+    <div class="profile_info_box">
+      <div class="profile_box">
+        <div class="user_image_box">
+          <%= image_tag post.user.profile, :class=>"profile" %>
         </div>
+        <span class="user_name_box">
+          <%= post.user.nickname %>
+        </span>
+        <time><%= time_ago_in_words post.created_at %></time>
+
+      </div>
+    </div>
+    <%= image_tag post.image.url, :class=> "left_image",  :width => '80%',:height => "auto"  %><br>
+      <div class="info_box">
 
         <div class="tag_function_box">
           <% post.tags.each do |tag| %>
@@ -20,7 +23,7 @@
           <% end %>
         </div>
 
-        <div class="function_box">
+
           <div class="like_function_box">
             <div id=like-button<%= post.id %>
               <%= render partial: "likes/like", locals: { post: post } %>
@@ -34,13 +37,11 @@
           <div class="comment_function_box">
             <div class="comment_count_box">
               <span>コメント<%= post.comments.count %>件</span>
-
-              <div class="comment_show">
-                <%= render partial: "comments/comment" , :locals => { post: post } %>
+              <div id="comment_show<%= post.id %>">
+                <%= render partial: "comments/comment", locals: { post: post, comment: comment }  %>
               </div>
             </div>
           </div>
         </div>
       </div>
-  </div>
-</div>
+    </div>

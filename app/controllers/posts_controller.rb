@@ -8,12 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
-      marker.lat place.latitude
-      marker.lng place.longitude
-      marker.infowindow place.name
-    end
-     @comment = Comment.new
+    @comment = Comment.new
   end
 
   def new
@@ -22,12 +17,23 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @cicadas = Cicada.all
+    @hash = Gmaps4rails.build_markers(@cicadas) do |cicada, marker|
+     marker.lat cicada.latitude
+     marker.lng cicada.longitude
+     marker.infowindow cicada.description
+     marker.json({title: cicada.title})
+    end
   end
 
   def create
+    binding.pry
     redirect_to action: :index
     post = current_user.posts.create(post_params)
-    post.tag_list.add(params[:tag_list])
+    tags = params[:tag_list].split(",")
+    tags.each do |t|
+      post.tag_list.add(t)
+    end
       post.save
 
   end
@@ -54,8 +60,7 @@ class PostsController < ApplicationController
   end
 
   def ranking
-    post_ids = Post.group(:id).order('count_likes_count DESC').limit(5).count(:likes_count).keys
-    @ranking = post_ids.map { |id| Post.find(id) }
+    @ranking = Post.order('likes_count DESC').limit(5)
   end
 
 

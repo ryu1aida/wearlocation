@@ -17,17 +17,16 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @cicadas = Cicada.all
-    @hash = Gmaps4rails.build_markers(@cicadas) do |cicada, marker|
+    @hash = Gmaps4rails.build_markers(@post) do |cicada, marker|
      marker.lat cicada.latitude
      marker.lng cicada.longitude
-     marker.infowindow cicada.address
-     marker.json({title: cicada.title})
+    #  marker.infowindow cicada.address
+    #  marker.json({title: cicada.title})
     end
   end
 
   def create
-  binding.pry
+
     redirect_to action: :index
     post = current_user.posts.create(post_params)
     tags = params[:tag_list].split(",")
@@ -35,10 +34,8 @@ class PostsController < ApplicationController
       post.tag_list.add(t)
       end
       post.save
-    t = MiniExiftool.new
-    t.to_hash
-
-
+    # t = MiniExiftool.new
+    # t.to_hash
 
   end
 

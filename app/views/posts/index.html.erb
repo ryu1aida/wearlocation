@@ -1,20 +1,21 @@
 <div class="contents clearfix">
 
-  <div class="left_content">
-    <%= render partial: "posts/post", collection: @posts, locals: { comment: @comment } %>
-      <div class="paginate">
-        <%= paginate(@posts) %>
-      </div>
+  <div class="left_content clearfix">
+    <%= render partial: "post", collection: @posts, locals: { comment: @comment } %>
+    <div class="paginate">
+      <%= paginate(@posts) %>
+    </div>
   </div>
-
   <div class="right_content">
-    <div class="ranking">Ranking</div>
-     <% @ranking.each.with_index(1) do |post, i| %>
-       <!-- <a href="/posts/<%= post %>"> -->
-         <div class="ranking_number_box">
-           <%= i  %>
-         </div>
-           <%= image_tag post.image_url, :class=>"right_image",  :width => '70%',:height => "auto"%>
-     <% end %>
+    <div class="right_container">
+      <div class="ranking">Ranking</div>
+         <% @ranking.each.with_index(1) do |post, i| %>
+           <!-- <a href="/posts/<%= post %>"> -->
+          <div class="ranking_number_box">
+             <%= i  %>
+          </div>
+          <%= image_tag post.image_url, :class=>"right_image",  :width => '90%',:height => "auto"%>
+         <% end %>
+    </div>
   </div>
 </div>

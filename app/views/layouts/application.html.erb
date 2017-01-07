@@ -24,10 +24,10 @@
         <div class="header_contents">
           <ul class="header_link">
             <li class="image_link">
-              <%= link_to image_tag('logout-icon.png',:size => '70x70'), destroy_user_session_path, method: :delete =%>
+              <%= link_to image_tag('logout-icon.png',:size => '55x55'), destroy_user_session_path, method: :delete =%>
             </li>
             <li class="image_link">
-              <a class="post" href="/posts/new"><%= image_tag 'post-icon.png',:size => '70x70' %></a>
+              <a class="post" href="/posts/new"><%= image_tag 'post-icon.png',:size => '55x55' %></a>
             </li>
           </ul>
         </div>
@@ -35,11 +35,11 @@
         <div class="header_contents">
           <ul class="header_link">
             <li class="image_link">
-              <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '75x75' %></a>
+              <a class="sign_in" href="/users/sign_in"><%= image_tag 'mypage-icon.png',:size => '55x55' %></a>
             </li>
             <li>
                <!-- <%= link_to "ログイン", new_user_session_path, class: 'posts' %> -->
-              <a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '75x75' %></a>
+              <a class="new_user" href="/users/sign_up"><%= image_tag 'new_user.png',:size => '55x55' %></a>
             </li>
           </ul>
         </div>

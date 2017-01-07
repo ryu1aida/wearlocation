@@ -16,3 +16,4 @@
 //= require gmaps/google
 //= require_tree .
 //= require not_enter.js
+//= require post.js

@@ -1,7 +1,8 @@
 
-  <div class="post_card">
+<div class="post_card">
+  <div class="post_container">
     <div class="profile_info_box">
-      <div class="profile_box">
+      <div class="profile_box clearfix">
         <div class="user_image_box">
           <%= image_tag post.user.profile, :class=>"profile" %>
         </div>
@@ -9,39 +10,48 @@
           <%= post.user.nickname %>
         </span>
         <time><%= time_ago_in_words post.created_at %></time>
-
       </div>
     </div>
-    <%= image_tag post.image.url, :class=> "left_image",  :width => '80%',:height => "auto"  %><br>
-      <div class="info_box">
+    <%= image_tag post.image.url, :class=> "left_image",  :width => '100%',:height => "auto"  %><br>
+    <div class="info_box clearfix">
 
-        <div class="tag_function_box">
-          <% post.tags.each do |tag| %>
-          <div class="tag">
-            #<%= tag  %>
-          </div>
-          <% end %>
+      <div class="tag_function_box">
+        <% post.tags.each do |tag| %>
+        <div class="tag">
+        #<%= tag  %>
         </div>
+        <% end %>
+      </div>
 
+      <div class="like_function_box">
+        <div id=like-button<%= post.id %>
+        <%= render partial: "likes/like", locals: { post: post } %>
+        </div>
+      </div>
 
-          <div class="like_function_box">
-            <div id=like-button<%= post.id %>
-              <%= render partial: "likes/like", locals: { post: post } %>
-            </div>
-          </div>
+      <div class="show_function_box">
+      <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
+      </div>
+    </div>
+    <div class="comment_function_box">
+      <div class="comment_count_box clearfix">
+        <span>コメント<%= post.comments.count %>件</span>
+        <div id="comment_show<%= post.id %>">
+          <%= render partial: "comments/comment", collection: post.comments  %>
+          <div class="comment_submit_box">
+            <%= form_for comment,id: "comment_form",remote: true do |f| %>
 
-          <div class="show_function_box">
-            <%= link_to '地図を開く', "/posts/#{post.id}", method: :get, class:"btn" %>
-          </div>
-
-          <div class="comment_function_box">
-            <div class="comment_count_box">
-              <span>コメント<%= post.comments.count %>件</span>
-              <div id="comment_show<%= post.id %>">
-                <%= render partial: "comments/comment", locals: { post: post, comment: comment }  %>
+              <div class="form-group">
+                <%= f.text_field :text, placeholder: "comment...", cols:"30", rows:"10", autofocus:"true", id:"form-control" %>
               </div>
-            </div>
+              <%= f.hidden_field :post_id, value: post.id %>
+
+              <%= f.submit "コメントする", class:"comment_btn"%>
+
+            <% end %>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

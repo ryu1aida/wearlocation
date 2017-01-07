@@ -48,15 +48,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  process :get_exif_info
 
-  def get_exif_info
-    exif = EXIFR::JPEG::new(self.file.file)
-    latitude = exif.to_hash[:gps_latitude]
-    latitude = latitude[0] + latitude[1]/60 + latitude[2]/3600.to_f
-    longitude = exif.to_hash[:gps_longitude]
-    longitude = longitude[0] + longitude[1]/60 + longitude[2]/3600.to_f
-     Post.last.update(latitude: latitude , longitude: longitude )
-  end
 
 end

@@ -20,14 +20,21 @@ class PostsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@post) do |cicada, marker|
      marker.lat cicada.latitude
      marker.lng cicada.longitude
-    #  marker.infowindow cicada.address
-    #  marker.json({title: cicada.title})
     end
   end
 
   def create
-
     redirect_to action: :index
+    binding.pry
+    exif = EXIFR::JPEG::new(post_params[:image].tempfile).to_hash
+    latitude = exif.to_hash[:gps_latitude]
+    latitude = latitude[0] + latitude[1]/60 + latitude[2]/3600.to_f
+    longitude = exif.to_hash[:gps_longitude]
+    longitude = longitude[0] + longitude[1]/60 + longitude[2]/3600.to_f
+    binding.pry
+    post_params = params.require(:post)
+          .permit(:title, :image, :content,:profile, [:tag_list]).merge(longitude: longitude, latitude: latitude)
+          binding.pry
     post = current_user.posts.create(post_params)
     tags = params[:tag_list].split(",")
       tags.each do |t|

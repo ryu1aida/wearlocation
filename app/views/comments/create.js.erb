@@ -1,4 +1,3 @@
-// $("#commnet_form").html("<%= j(render partial: "comments/comment", locals:{comment: @comment}) %>");
 console.log("aaaa");
 $("#form-control").val(""); // 入力フォームを空欄にする処理
-$("#comment_show<%= @comment.id %>").html("<%= render partial: 'comments/comment', locals: { comment: @comment, post: @post } %>");
+$("#comment_show<%= @comment.id %>").html("<%= render partial: 'posts/post', locals: { comment: @comment, post: @post } %>");

@@ -10,7 +10,7 @@
   <%= form_for comment,id: "comment_form",remote: true do |f| %>
 
     <div class="form-group">
-      <%= f.text_field :text, placeholder: "comment...", cols:"30", rows:"10", autofocus:"true", class:"form-control" %>
+      <%= f.text_field :text, placeholder: "comment...", cols:"30", rows:"10", autofocus:"true", id:"form-control" %>
     </div>
     <%= f.hidden_field :post_id, value: post.id %>
 

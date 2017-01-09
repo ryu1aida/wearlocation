@@ -1,24 +1,49 @@
-<div class="contents">
-  <div class="show_content">
-    <%= image_tag @post.image, class: 'show_image' %>
+<div class="contents clearfix">
+  <div class="show_content clearfix">
+    <div class="show_container">
+      <%= image_tag @post.image, class: 'show_image' %>
 
-    <script src="//maps.google.com/maps/api/js?key=AIzaSyDMg2LFSQiq6KbXDJJrlTTBjHMIw-X2tQU"></script>
-    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+      <script src="//maps.google.com/maps/api/js?key=AIzaSyDMg2LFSQiq6KbXDJJrlTTBjHMIw-X2tQU"></script>
+      <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 
-  <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-  </div>
+      <div style='width: 800px;'>
+        <div id="map" style='width: 600px; height: 600px;'></div>
+      </div>
 
-  <script type="text/javascript">
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      <script type="text/javascript">
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      marker = handler.addMarkers(<%= raw @hash.to_json %>);
+      markers = handler.addMarkers(<%= raw @hashimage.to_json %>);
+      markers = markers.concat(marker);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-    });
-  </script>
 
-    <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get,class:"btn" %>
-    <%= link_to '削除', "/posts/#{@post.id}", method: :delete,class:"btn" %>
+      });
+
+      </script>
+
+      <div class="edit_content">
+        <%= link_to 'Edit', "/posts/#{@post.id}/edit", method: :get,class:"btn" %>
+        <%= link_to 'Delete', "/posts/#{@post.id}", method: :delete,class:"btn" %>
+        <!-- <div class="address">
+        <p><%= @address %></p>
+        </div> -->
+      </div>
+
+    </div>
   </div>
+
+  <div class="show_right_content">
+    <p class="content_name">関連する画像</p>
+      <div class="show_right_container">
+        <ul class="show_right_content_ul">
+          <% @images.each do |image| %>
+            <li class="show_right_content_image"><%= image_tag image.image,  class:"show_right_image",  :width => '100%',:height => "auto" %></li>
+            <!-- <li><%=image.description%> </li> -->
+          <% end %>
+        </ul>
+      </div>
+  </div>
+
 </div>

@@ -31,21 +31,26 @@
   <div class="post_box">
     <%= form_for @post do |f| %>
       <!-- <%= f.text_field :title, placeholder: 'title' %><br> -->
+
       <div class="field">
         <%= f.label :image, "画像を選択する" %>
           <!-- <div class="file_field"> -->
             <%= f.file_field :image   %>
           <!-- </div> -->
       </div>
+
       <div class="field">
         <%= f.label :tag, "タグをつける" %>
           <!-- <div class="tag_field"> -->
             <%= text_field_tag :tag_list, @post.tag_list, "data-role" => "tagsinput", :class => "post_tag" %>
           <!-- </div> -->
       </div>
+
       <div class="btn_field">
         <%= button_to "投稿", { :action => "create" }, :class => "btn"  %>
       </div>
+
     <% end %>
   </div>
+
 </div>

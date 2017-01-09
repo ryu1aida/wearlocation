@@ -17,54 +17,64 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @hash = Gmaps4rails.build_markers(@post) do |cicada, marker|
-     marker.lat cicada.latitude
-     marker.lng cicada.longitude
-    end
+    @images = Post.within(1, :units => :kms, :origin => @post)
+      @hash = Gmaps4rails.build_markers(@post) do |cicada, marker|
+        marker.lat cicada.latitude
+        marker.lng cicada.longitude
+        marker.infowindow cicada.gmaps4rails_infowindow
+        marker.picture({
+                    :url => "https://people-mozilla.org/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+                    :width   => 30,
+                    :height  => 30
+                   })
+       # marker.json({ title: cicada.title })
+      end
+      @hashimage = Gmaps4rails.build_markers(@images) do |cicada, marker|
+      marker.lat cicada.latitude
+      marker.lng cicada.longitude
+      marker.infowindow cicada.gmaps4rails_infowindow
+      end
   end
 
   def create
     redirect_to action: :index
-    binding.pry
     exif = EXIFR::JPEG::new(post_params[:image].tempfile).to_hash
     latitude = exif.to_hash[:gps_latitude]
     latitude = latitude[0] + latitude[1]/60 + latitude[2]/3600.to_f
     longitude = exif.to_hash[:gps_longitude]
     longitude = longitude[0] + longitude[1]/60 + longitude[2]/3600.to_f
-    binding.pry
+    address = latitude.to_s + "," + longitude.to_s
+    description = Geocoder.address(address, language: :ja)
     post_params = params.require(:post)
-          .permit(:title, :image, :content,:profile, [:tag_list]).merge(longitude: longitude, latitude: latitude)
-          binding.pry
+          .permit(:title, :image, :content,:profile, [:tag_list]).merge(longitude: longitude, latitude: latitude, description: description)
     post = current_user.posts.create(post_params)
     tags = params[:tag_list].split(",")
       tags.each do |t|
       post.tag_list.add(t)
       end
       post.save
-    # t = MiniExiftool.new
-    # t.to_hash
 
   end
 
   def destroy
     redirect_to action: :index
     post = Post.find(params[:id])
-    if post.user_id == current_user.id
-      post.destroy
-    end
+      if post.user_id == current_user.id
+        post.destroy
+      end
     post.tag_list.remove(params[:tag])
   end
 
   def edit
-       @post = Post.find(params[:id])
-       post.tag_list
+    @post = Post.find(params[:id])
+    post.tag_list
   end
 
   def update
     post = Post.find(params[:id])
-    if post.user_id == current_user.id
-      post.update(post_params)
-    end
+      if post.user_id == current_user.id
+        post.update(post_params)
+      end
   end
 
   def ranking
@@ -82,9 +92,8 @@ class PostsController < ApplicationController
 
 
   private
-
-    def post_params
-      params.require(:post)
-            .permit(:title, :image, :content,:profile, [:tag_list])
-    end
+  def post_params
+    params.require(:post)
+          .permit(:title, :image, :content,:profile, [:tag_list])
+  end
 end

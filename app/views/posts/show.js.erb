@@ -1,0 +1,7 @@
+s $(document).on 'map:ready', -> openInfoWindow()
+ openInfoWindow = ->
+   for m in Gmaps.map.markers
+     marker = m.serviceObject
+     google.maps.event.addListener marker, "click" ->
+       m.infowindow.open(marker.map, marker)
+     m.infowindow.open(marker.map, marker)

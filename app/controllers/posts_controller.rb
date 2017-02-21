@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def new
-   @post = Post.new
+    @post = Post.new
   end
 
   def show
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
         marker.lng cicada.longitude
         marker.infowindow cicada.gmaps4rails_infowindow
         marker.picture({
-                    :url => "https://people-mozilla.org/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+                    # :url => @hashimage,
                     :width   => 30,
                     :height  => 30
                    })
@@ -52,8 +52,7 @@ class PostsController < ApplicationController
       tags.each do |t|
       post.tag_list.add(t)
       end
-      post.save
-
+    post.save
   end
 
   def destroy

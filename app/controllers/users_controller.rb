@@ -16,6 +16,4 @@ private
     params.require(:user).permit(:profile)
   end
 
-
-
 end
